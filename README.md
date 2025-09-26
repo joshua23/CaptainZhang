@@ -1,155 +1,133 @@
-# 天人合一 · 张大师 - 智慧生活导航系统
+# 张大师 CaptainZhang - 天人合一智慧生活导航系统
 
-## 项目简介
+<div align="center">
+  <img src="logo.png" alt="张大师 Logo" width="200">
 
-融合传统东方智慧与现代科技的智慧生活导航系统，通过黄历、八字、五行等传统文化元素，为用户提供个性化的生活指导和决策建议。
+  **融合千年智慧与现代科技的生活导航系统**
 
-## 功能特性
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+  [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/joshua23/CaptainZhang)
+</div>
 
-### 核心功能
-- 🔮 **用户画像设置** - 生辰八字录入，建立专属命理画像
-- 📅 **今日运势** - 个人运势分析与黄历宜忌查询
-- 🗓️ **择吉日历** - 黄道吉日选择，重要事项规划
-- 🌿 **生活指南** - 衣食住行全方位生活建议
-- 🎯 **智慧决策** - 重大事项分析与专业建议
-- 📚 **知识学习** - 传统文化与易经智慧学习
+## 🌟 项目简介
 
-### 技术亮点
-- 纯前端实现，无需后端服务
-- 响应式设计，支持多端访问
-- 本地数据存储，保护用户隐私
-- 精美动画效果，沉浸式体验
-- 模块化架构，易于扩展维护
+张大师是一款基于中国传统哲学「天人合一」理念的智能生活导航系统，将易经八卦、五行学说、黄历择吉等传统智慧与现代AI技术相结合，为现代都市人提供个性化的生活指导。
 
-## 技术栈
+## ✨ 核心功能
 
-- **HTML5** - 语义化结构
-- **CSS3** - 现代样式与动画
-- **JavaScript** - 原生ES6+
-- **MPA架构** - 多页面应用，SEO友好
+### 🔮 智慧决策
+- **用户画像**：基于生辰八字建立个人五行属性档案
+- **今日运势**：实时运势分析与黄历宜忌提醒
+- **择吉日历**：重要事项的吉日选择与规划
 
-## 项目结构
+### 🍃 生活指南
+- **衣**：根据节气五行推荐服饰搭配
+- **食**：结合体质节气的养生食谱
+- **住**：居家风水布局与作息建议
+- **行**：出行方位与时辰选择
 
-```
-CaptainZhang_张大师/
-├── index.html          # 首页与导航中心
-├── profile.html        # 用户画像设置页
-├── fortune.html        # 今日运势页
-├── css/
-│   ├── common.css     # 公共样式
-│   ├── components.css # 组件样式
-│   ├── index.css      # 首页样式
-│   ├── profile.css    # 画像页样式
-│   └── fortune.css    # 运势页样式
-├── js/
-│   ├── common.js      # 公共工具函数
-│   ├── components.js  # UI组件库
-│   ├── index.js       # 首页脚本
-│   ├── profile.js     # 画像页脚本
-│   └── fortune.js     # 运势页脚本
-├── master.png         # 大师形象图片
-└── README.md          # 项目文档
-```
+### 📚 文化传承
+- **知识学习**：易经八卦、五行风水知识库
+- **智慧问答**：传统文化疑问解答
+- **社群共修**：分享交流传统智慧
 
-## 使用方式
+## 🚀 快速开始
 
-### 快速开始
-1. 在浏览器中打开 `index.html` 查看项目首页
-2. 点击"开启智慧之旅"进入用户画像设置
-3. 填写基本信息后即可使用所有功能
-4. 每个页面都可独立访问和测试
-
-### 功能导航
-- **首页** - 项目介绍与功能导航
-- **用户画像** - 设置个人信息，生成命理分析
-- **今日运势** - 查看运势指数、黄历宜忌、时辰吉凶
-- **生活指南** - 获取衣食住行个性化建议
-- **智慧决策** - 择吉查询、重大事项分析
-
-## 页面清单
-
-| 页面 | 文件 | 功能描述 |
-|------|------|----------|
-| 首页 | index.html | 欢迎页面、功能导航、今日概览 |
-| 用户画像 | profile.html | 生辰八字设置、五行分析、命理画像 |
-| 今日运势 | fortune.html | 运势仪表盘、黄历宜忌、时辰吉凶 |
-| 择吉日历 | calendar.html | 日历视图、吉日标注（待开发） |
-| 生活指南 | lifestyle.html | 衣食住行建议（待开发） |
-| 智慧决策 | decision.html | 择吉查询、决策分析（待开发） |
-
-## 开发说明
+### 在线体验
+直接打开 `index.html` 即可体验完整功能
 
 ### 本地运行
-1. 克隆或下载项目到本地
-2. 使用任意 HTTP 服务器运行（如 Live Server）
-3. 或直接在浏览器中打开 HTML 文件
+```bash
+# 克隆项目
+git clone https://github.com/joshua23/CaptainZhang.git
 
-### 代码规范
-- 使用语义化 HTML 标签
-- CSS 采用 BEM 命名规范
-- JavaScript 使用 ES6+ 语法
-- 注释完整，便于维护
+# 进入项目目录
+cd CaptainZhang
 
-### 扩展开发
-- 组件化设计，易于添加新功能
-- 公共资源分离，提高复用性
-- 模块化脚本，便于功能扩展
+# 直接打开index.html或使用本地服务器
+# 使用Python
+python -m http.server 8000
 
-## 开发进度
+# 或使用Node.js
+npx serve
+```
 
-### 已完成
-- ✅ 项目架构搭建
-- ✅ 公共样式系统
-- ✅ UI组件库
-- ✅ 首页与导航
-- ✅ 用户画像功能
-- ✅ 今日运势功能
-- ✅ 响应式设计
-- ✅ 动画效果
+## 📁 项目结构
 
-### 待开发
-- ⏳ 择吉日历页面
-- ⏳ 生活指南页面
-- ⏳ 智慧决策页面
-- ⏳ 知识学习页面
-- ⏳ 暗色模式
-- ⏳ PWA支持
-- ⏳ 数据导出功能
+```
+CaptainZhang/
+├── index.html          # 主页面
+├── profile.html        # 用户画像设置
+├── fortune.html        # 今日运势
+├── calendar.html       # 择吉日历
+├── lifestyle.html      # 生活指南
+├── decision.html       # 智慧决策
+├── knowledge.html      # 知识学习
+├── css/               # 样式文件
+│   ├── common.css     # 公共样式
+│   ├── components.css # 组件样式
+│   └── *.css         # 页面样式
+├── js/                # 脚本文件
+│   ├── common.js      # 公共功能
+│   ├── components.js  # 组件逻辑
+│   └── *.js          # 页面逻辑
+└── assets/           # 静态资源
+    ├── logo.png      # Logo图片
+    └── master.png    # 大师形象
+```
 
-## 浏览器兼容
+## 🎨 设计特色
 
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-- 移动端浏览器
+- **神秘优雅**：紫色系配色，营造仙风道骨氛围
+- **动效丰富**：淡入淡出、光环脉冲、粒子飘动
+- **响应式设计**：完美适配桌面、平板、手机
+- **暗色模式**：符合中医养生作息规律
 
-## 更新日志
+## 🛠️ 技术栈
 
-### v1.0.0 (2025-09-26)
-- 🎉 项目初始版本发布
-- ✨ 实现核心功能模块
-- 🎨 完成视觉设计系统
-- 📱 支持响应式布局
-- ⚡ 优化动画性能
+- **前端**：HTML5 + CSS3 + JavaScript (原生)
+- **设计**：响应式布局 + CSS动画
+- **数据**：LocalStorage本地存储
+- **算法**：黄历算法、五行推算、节气计算
 
-## 贡献指南
+## 📋 开发计划
 
-欢迎提交 Issue 和 Pull Request 来帮助改进项目。
+- [ ] 后端服务集成（Node.js + Supabase）
+- [ ] AI智能问答（接入大语言模型）
+- [ ] 移动APP开发（React Native）
+- [ ] 社区功能（用户交流分享）
+- [ ] 更多传统文化内容
 
-## 许可证
+## 🤝 贡献指南
 
-本项目仅供学习交流使用。
+欢迎提交Issue和Pull Request！
 
-## 联系方式
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
 
-- 项目作者：张大师团队
-- 项目地址：[GitHub Repository]
+## 📄 开源协议
+
+本项目采用 MIT 协议 - 详见 [LICENSE](LICENSE) 文件
+
+## 👥 团队
+
+- 产品设计：AI Product Manager
+- UI/UX设计：AI Designer
+- 前端开发：AI Frontend Developer
+- 项目维护：[@joshua23](https://github.com/joshua23)
+
+## 📮 联系方式
+
+- GitHub: [https://github.com/joshua23/CaptainZhang](https://github.com/joshua23/CaptainZhang)
+- Issues: [https://github.com/joshua23/CaptainZhang/issues](https://github.com/joshua23/CaptainZhang/issues)
 
 ---
 
-> "天人合一，道法自然。让千年智慧指引现代生活。"
-
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
+<div align="center">
+  <strong>天人合一 · 道法自然</strong>
+  <br>
+  让千年智慧指引现代生活
+</div>
