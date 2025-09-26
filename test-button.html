@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试按钮</title>
+</head>
+<body>
+    <button onclick="testClick()">测试点击</button>
+    <button onclick="startJourney()">开启智慧之旅</button>
+
+    <div id="welcomePage" style="background: yellow; padding: 20px;">
+        欢迎页
+    </div>
+    <div id="mainApp" style="display: none; background: green; padding: 20px;">
+        主应用页
+    </div>
+
+    <script>
+        function testClick() {
+            console.log('Test button clicked!');
+            alert('按钮工作正常！');
+        }
+
+        function startJourney() {
+            console.log('startJourney called from test');
+            const welcomePage = document.getElementById('welcomePage');
+            const mainApp = document.getElementById('mainApp');
+
+            if (welcomePage && mainApp) {
+                welcomePage.style.display = 'none';
+                mainApp.style.display = 'block';
+                alert('切换成功！');
+            } else {
+                alert('找不到元素！');
+            }
+        }
+    </script>
+</body>
+</html>

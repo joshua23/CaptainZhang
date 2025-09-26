@@ -1,0 +1,674 @@
+/* ================================
+   择吉日历样式 - 张大师智慧生活导航系统
+   ================================ */
+
+/* ====================
+   今日黄历概览
+   ==================== */
+.today-almanac {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+.almanac-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.almanac-icon {
+    font-size: 2.5rem;
+}
+
+.almanac-info {
+    flex: 1;
+}
+
+.almanac-title {
+    font-size: 1.5rem;
+    color: #212121;
+    margin-bottom: 0.25rem;
+}
+
+.almanac-date {
+    color: #616161;
+    font-size: 0.875rem;
+}
+
+/* 农历信息框 */
+.lunar-info-box {
+    background: linear-gradient(135deg, #FAFAFA, #F5F5F5);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #E0E0E0;
+}
+
+.lunar-main {
+    flex: 1;
+}
+
+.lunar-date-large {
+    font-size: 1.5rem;
+    color: #D4577B;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.lunar-detail {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    color: #616161;
+}
+
+.solar-term {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.term-badge {
+    background: linear-gradient(135deg, #D4577B, #E899B3);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.term-countdown {
+    font-size: 0.75rem;
+    color: #757575;
+}
+
+/* 今日宜忌 */
+.today-yiji {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.yiji-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #212121;
+}
+
+.dot-green, .dot-red {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-green {
+    background: #4CAF50;
+}
+
+.dot-red {
+    background: #F44336;
+}
+
+.yiji-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-yi, .tag-ji {
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    border: 1px solid;
+}
+
+.tag-yi {
+    background: rgba(76, 175, 80, 0.05);
+    border-color: rgba(76, 175, 80, 0.3);
+    color: #4CAF50;
+}
+
+.tag-ji {
+    background: rgba(244, 67, 54, 0.05);
+    border-color: rgba(244, 67, 54, 0.3);
+    color: #F44336;
+}
+
+/* 今日吉利 */
+.lucky-info {
+    background: linear-gradient(135deg, rgba(212, 87, 123, 0.03), rgba(232, 153, 179, 0.03));
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid rgba(212, 87, 123, 0.2);
+}
+
+.lucky-title {
+    font-size: 1rem;
+    color: #212121;
+    margin-bottom: 1rem;
+}
+
+.lucky-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.lucky-item {
+    text-align: center;
+}
+
+.lucky-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #757575;
+    margin-bottom: 0.25rem;
+}
+
+.lucky-value {
+    display: block;
+    font-size: 0.875rem;
+    color: #D4577B;
+    font-weight: 600;
+}
+
+/* ====================
+   月份导航
+   ==================== */
+.month-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 1.5rem;
+}
+
+.btn-icon {
+    background: transparent;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #616161;
+}
+
+.btn-icon:hover {
+    background: #F5F5F5;
+    border-color: #D4577B;
+    color: #D4577B;
+}
+
+.month-display {
+    text-align: center;
+}
+
+.month-title {
+    font-size: 1.25rem;
+    color: #212121;
+    margin-bottom: 0.25rem;
+}
+
+.lunar-month {
+    font-size: 0.875rem;
+    color: #D4577B;
+}
+
+.btn-outline {
+    background: white;
+    border: 1px solid #D4577B;
+    color: #D4577B;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #D4577B;
+    color: white;
+}
+
+/* ====================
+   日历网格
+   ==================== */
+.calendar-grid {
+    background: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 2rem;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.weekday {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #616161;
+    font-weight: 500;
+}
+
+.weekday.weekend {
+    color: #D4577B;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.day-cell {
+    aspect-ratio: 1;
+    border: 1px solid #F0F0F0;
+    border-radius: 8px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-cell:hover {
+    background: #FAFAFA;
+    border-color: #D4577B;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.day-solar {
+    font-size: 1.125rem;
+    color: #212121;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.day-lunar {
+    font-size: 0.75rem;
+    color: #757575;
+}
+
+.day-cell.today {
+    background: linear-gradient(135deg, rgba(212, 87, 123, 0.1), rgba(232, 153, 179, 0.1));
+    border-color: #D4577B;
+}
+
+.day-cell.today .day-solar {
+    color: #D4577B;
+    font-weight: 600;
+}
+
+.day-cell.selected {
+    background: linear-gradient(135deg, #D4577B, #E899B3);
+    border-color: #D4577B;
+}
+
+.day-cell.selected .day-solar,
+.day-cell.selected .day-lunar {
+    color: white;
+}
+
+.day-cell.other-month {
+    opacity: 0.4;
+}
+
+.day-cell.auspicious {
+    position: relative;
+}
+
+.day-cell.auspicious::after {
+    content: "吉";
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    background: #4CAF50;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.625rem;
+    font-weight: 600;
+}
+
+/* ====================
+   日期详情
+   ==================== */
+.date-detail {
+    background: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 2rem;
+}
+
+.detail-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    color: #212121;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #F0F0F0;
+}
+
+.detail-icon {
+    font-size: 1.5rem;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: #FAFAFA;
+    border-radius: 6px;
+}
+
+.detail-label {
+    color: #616161;
+    font-size: 0.875rem;
+}
+
+.detail-value {
+    color: #212121;
+    font-weight: 500;
+}
+
+/* 宜忌部分 */
+.yiji-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.yiji-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #212121;
+}
+
+.yiji-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.yiji-item {
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+.yi-section .yiji-item {
+    background: rgba(76, 175, 80, 0.05);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    color: #4CAF50;
+}
+
+.ji-section .yiji-item {
+    background: rgba(244, 67, 54, 0.05);
+    border: 1px solid rgba(244, 67, 54, 0.3);
+    color: #F44336;
+}
+
+/* 吉时部分 */
+.jishi-section {
+    margin-bottom: 1.5rem;
+}
+
+.jishi-title {
+    font-size: 1rem;
+    color: #212121;
+    margin-bottom: 0.75rem;
+}
+
+.jishi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.jishi-item {
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.75rem;
+    background: #FAFAFA;
+    border: 1px solid #E0E0E0;
+}
+
+.jishi-item.good {
+    background: rgba(76, 175, 80, 0.05);
+    border-color: rgba(76, 175, 80, 0.3);
+    color: #4CAF50;
+}
+
+/* 操作按钮 */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ====================
+   快速择吉
+   ==================== */
+.quick-select {
+    background: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    color: #212121;
+    margin-bottom: 0.5rem;
+}
+
+.section-icon {
+    font-size: 1.5rem;
+}
+
+.section-desc {
+    color: #616161;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.event-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.event-btn {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.event-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #D4577B;
+    background: linear-gradient(135deg, #FFFFFF, rgba(212, 87, 123, 0.02));
+}
+
+.event-icon {
+    font-size: 2rem;
+}
+
+.event-name {
+    font-size: 1rem;
+    color: #212121;
+    font-weight: 500;
+}
+
+.event-desc {
+    font-size: 0.75rem;
+    color: #757575;
+    text-align: center;
+}
+
+/* ====================
+   吉日推荐
+   ==================== */
+.auspicious-dates {
+    background: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+}
+
+.recommended-dates {
+    display: grid;
+    gap: 1rem;
+}
+
+.rec-date-item {
+    background: linear-gradient(135deg, #FAFAFA, #F5F5F5);
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rec-date-item:hover {
+    border-color: #D4577B;
+    background: linear-gradient(135deg, #FFFFFF, rgba(212, 87, 123, 0.02));
+}
+
+.rec-date-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.rec-date-solar {
+    font-size: 1rem;
+    color: #212121;
+    font-weight: 500;
+}
+
+.rec-date-lunar {
+    font-size: 0.875rem;
+    color: #D4577B;
+}
+
+.rec-date-yiji {
+    font-size: 0.875rem;
+    color: #616161;
+}
+
+/* ====================
+   响应式设计
+   ==================== */
+@media (max-width: 768px) {
+    .lucky-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jishi-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .today-yiji {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .lunar-info-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .solar-term {
+        align-items: flex-start;
+    }
+
+    .days-grid {
+        gap: 1px;
+    }
+
+    .day-cell {
+        padding: 0.25rem;
+    }
+
+    .day-solar {
+        font-size: 0.875rem;
+    }
+
+    .day-lunar {
+        font-size: 0.625rem;
+    }
+}

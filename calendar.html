@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="css/light-theme.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/components-light.css">
+    <link rel="stylesheet" href="css/color-optimization.css">
+    <link rel="stylesheet" href="css/subpage-light-fix.css">
     <link rel="stylesheet" href="css/calendar.css">
+    <!-- 全局浅色主题覆盖 -->
+    <link rel="stylesheet" href="css/global-light-override.css">
 </head>
 <body>
     <!-- 页面头部 -->
@@ -34,23 +38,116 @@
     <!-- 主要内容 -->
     <main class="app-main">
         <div class="container">
+            <!-- 今日黄历概览 -->
+            <section class="today-almanac card">
+                <div class="almanac-header">
+                    <div class="almanac-icon">📅</div>
+                    <div class="almanac-info">
+                        <h2 class="almanac-title">今日黄历</h2>
+                        <p class="almanac-date" id="todayDate">
+                            2025年9月26日 星期五
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 农历信息 -->
+                <div class="lunar-info-box">
+                    <div class="lunar-main">
+                        <div class="lunar-date-large" id="todayLunar">
+                            甲辰年 腊月初八
+                        </div>
+                        <div class="lunar-detail">
+                            <span class="zodiac-info">生肖：龙</span>
+                            <span class="wuxing-info">五行：山下火</span>
+                        </div>
+                    </div>
+                    <div class="solar-term">
+                        <span class="term-badge" id="solarTerm">大寒</span>
+                        <span class="term-countdown">距立春12天</span>
+                    </div>
+                </div>
+
+                <!-- 今日宜忌 -->
+                <div class="today-yiji">
+                    <div class="yi-section">
+                        <h4 class="yiji-header">
+                            <span class="dot-green"></span> 宜
+                        </h4>
+                        <div class="yiji-tags">
+                            <span class="tag-yi">祭祀</span>
+                            <span class="tag-yi">沐浴</span>
+                            <span class="tag-yi">理发</span>
+                            <span class="tag-yi">整容</span>
+                            <span class="tag-yi">进人口</span>
+                        </div>
+                    </div>
+                    <div class="ji-section">
+                        <h4 class="yiji-header">
+                            <span class="dot-red"></span> 忌
+                        </h4>
+                        <div class="yiji-tags">
+                            <span class="tag-ji">嫁娶</span>
+                            <span class="tag-ji">动土</span>
+                            <span class="tag-ji">造房</span>
+                            <span class="tag-ji">开市</span>
+                            <span class="tag-ji">入宅</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 今日吉利 -->
+                <div class="lucky-info">
+                    <h4 class="lucky-title">今日吉利</h4>
+                    <div class="lucky-grid">
+                        <div class="lucky-item">
+                            <span class="lucky-label">财神方位</span>
+                            <span class="lucky-value">正东</span>
+                        </div>
+                        <div class="lucky-item">
+                            <span class="lucky-label">吉时</span>
+                            <span class="lucky-value">辰时(7-9点)</span>
+                        </div>
+                        <div class="lucky-item">
+                            <span class="lucky-label">幸运色</span>
+                            <span class="lucky-value">红色</span>
+                        </div>
+                        <div class="lucky-item">
+                            <span class="lucky-label">幸运数字</span>
+                            <span class="lucky-value">3, 8</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- 月份导航 -->
             <section class="month-nav card">
-                <button class="btn-icon" onclick="changeMonth(-1)">◀</button>
-                <h2 id="currentMonth" class="month-title">2025年9月</h2>
-                <button class="btn-icon" onclick="changeMonth(1)">▶</button>
+                <button class="btn-icon" onclick="changeMonth(-1)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="month-display">
+                    <h2 id="currentMonth" class="month-title">2025年9月</h2>
+                    <p id="currentLunarMonth" class="lunar-month">乙巳年 八月</p>
+                </div>
+                <button class="btn-icon" onclick="changeMonth(1)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+                <button class="btn btn-outline" onclick="goToToday()">今天</button>
             </section>
 
             <!-- 日历网格 -->
             <section class="calendar-grid card">
                 <div class="weekdays">
-                    <div class="weekday">日</div>
+                    <div class="weekday weekend">日</div>
                     <div class="weekday">一</div>
                     <div class="weekday">二</div>
                     <div class="weekday">三</div>
                     <div class="weekday">四</div>
                     <div class="weekday">五</div>
-                    <div class="weekday">六</div>
+                    <div class="weekday weekend">六</div>
                 </div>
                 <div id="calendarDays" class="days-grid">
                     <!-- 日期将通过JavaScript动态生成 -->
@@ -59,83 +156,143 @@
 
             <!-- 选中日期详情 -->
             <section class="date-detail card" id="dateDetail" style="display: none;">
-                <h3 class="detail-title">日期详情</h3>
+                <h3 class="detail-title">
+                    <span class="detail-icon">📆</span>
+                    日期详情
+                </h3>
                 <div class="detail-content">
-                    <div class="detail-item">
-                        <span class="detail-label">公历：</span>
-                        <span id="detailSolar">2025年9月26日</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">农历：</span>
-                        <span id="detailLunar">八月廿六</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">干支：</span>
-                        <span id="detailGanzhi">甲辰年 癸酉月 壬午日</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">五行：</span>
-                        <span id="detailWuxing">木火</span>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">公历：</span>
+                            <span id="detailSolar" class="detail-value">2025年9月26日</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">农历：</span>
+                            <span id="detailLunar" class="detail-value">八月廿六</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">干支：</span>
+                            <span id="detailGanzhi" class="detail-value">甲辰年 癸酉月 壬午日</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">五行：</span>
+                            <span id="detailWuxing" class="detail-value">木火</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">生肖：</span>
+                            <span id="detailZodiac" class="detail-value">龙</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">节气：</span>
+                            <span id="detailSolarTerm" class="detail-value">秋分</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="yiji-section">
                     <div class="yi-section">
-                        <h4 class="yiji-title">宜</h4>
+                        <h4 class="yiji-title">
+                            <span class="dot-green"></span> 宜
+                        </h4>
                         <div id="yiList" class="yiji-list">
-                            <span class="yiji-item">祭祀</span>
-                            <span class="yiji-item">祈福</span>
-                            <span class="yiji-item">开市</span>
-                            <span class="yiji-item">纳财</span>
+                            <!-- 动态生成 -->
                         </div>
                     </div>
                     <div class="ji-section">
-                        <h4 class="yiji-title">忌</h4>
+                        <h4 class="yiji-title">
+                            <span class="dot-red"></span> 忌
+                        </h4>
                         <div id="jiList" class="yiji-list">
-                            <span class="yiji-item">动土</span>
-                            <span class="yiji-item">破土</span>
-                            <span class="yiji-item">安葬</span>
+                            <!-- 动态生成 -->
                         </div>
                     </div>
                 </div>
 
+                <div class="jishi-section">
+                    <h4 class="jishi-title">吉时</h4>
+                    <div class="jishi-grid" id="jishiGrid">
+                        <!-- 动态生成时辰信息 -->
+                    </div>
+                </div>
+
                 <div class="action-buttons">
-                    <button class="btn btn-primary" onclick="selectDate()">选择此日</button>
+                    <button class="btn btn-primary" onclick="selectDate()">
+                        <span>✅</span> 选择此日
+                    </button>
+                    <button class="btn btn-secondary" onclick="shareDate()">
+                        <span>📤</span> 分享
+                    </button>
                 </div>
             </section>
 
             <!-- 快速择吉 -->
             <section class="quick-select card">
-                <h3 class="section-title">快速择吉</h3>
+                <h3 class="section-title">
+                    <span class="section-icon">⚡</span>
+                    快速择吉
+                </h3>
+                <p class="section-desc">根据事项类型，为您推荐最近的吉日</p>
                 <div class="event-buttons">
                     <button class="event-btn" onclick="findAuspiciousDate('wedding')">
                         <span class="event-icon">💑</span>
-                        <span>婚嫁</span>
+                        <span class="event-name">婚嫁</span>
+                        <span class="event-desc">结婚、订婚、纳采</span>
                     </button>
                     <button class="event-btn" onclick="findAuspiciousDate('moving')">
                         <span class="event-icon">🏠</span>
-                        <span>搬迁</span>
+                        <span class="event-name">搬迁</span>
+                        <span class="event-desc">搬家、入宅、安床</span>
                     </button>
                     <button class="event-btn" onclick="findAuspiciousDate('opening')">
                         <span class="event-icon">🎯</span>
-                        <span>开业</span>
+                        <span class="event-name">开业</span>
+                        <span class="event-desc">开市、开张、开工</span>
                     </button>
                     <button class="event-btn" onclick="findAuspiciousDate('travel')">
                         <span class="event-icon">✈️</span>
-                        <span>出行</span>
+                        <span class="event-name">出行</span>
+                        <span class="event-desc">旅游、出差、远行</span>
                     </button>
                     <button class="event-btn" onclick="findAuspiciousDate('contract')">
                         <span class="event-icon">📝</span>
-                        <span>签约</span>
+                        <span class="event-name">签约</span>
+                        <span class="event-desc">签合同、交易、立券</span>
                     </button>
                     <button class="event-btn" onclick="findAuspiciousDate('meeting')">
                         <span class="event-icon">🤝</span>
-                        <span>会见</span>
+                        <span class="event-name">会见</span>
+                        <span class="event-desc">会友、拜访、洽谈</span>
                     </button>
+                    <button class="event-btn" onclick="findAuspiciousDate('decoration')">
+                        <span class="event-icon">🔨</span>
+                        <span class="event-name">装修</span>
+                        <span class="event-desc">动土、修造、装潢</span>
+                    </button>
+                    <button class="event-btn" onclick="findAuspiciousDate('blessing')">
+                        <span class="event-icon">🙏</span>
+                        <span class="event-name">祈福</span>
+                        <span class="event-desc">祭祀、祈福、求嗣</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 吉日推荐 -->
+            <section class="auspicious-dates card" id="auspiciousDates" style="display: none;">
+                <h3 class="section-title">
+                    <span class="section-icon">✨</span>
+                    吉日推荐
+                </h3>
+                <div id="recommendedDates" class="recommended-dates">
+                    <!-- 动态生成推荐日期 -->
                 </div>
             </section>
         </div>
     </main>
+
+    <!-- 页面底部 -->
+    <footer class="app-footer">
+        <p>© 2025 张大师 - 智慧生活导航系统</p>
+    </footer>
 
     <!-- 引入JavaScript文件 -->
     <script src="js/common.js"></script>
