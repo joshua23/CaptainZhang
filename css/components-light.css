@@ -1,0 +1,265 @@
+/* ================================
+   组件浅色主题覆盖 - 张大师智慧生活导航系统
+   覆盖components-elegant.css的深色样式
+   ================================ */
+
+/* ====================
+   页面头部 - 浅色版本
+   ==================== */
+.app-header {
+    background: linear-gradient(135deg,
+        #FFFFFF 0%,
+        rgba(212, 87, 123, 0.05) 100%);
+    color: var(--text-primary);
+    border-bottom: 1px solid #E0E0E0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    backdrop-filter: none;
+}
+
+.logo-text {
+    background: linear-gradient(135deg, #D4577B, #B93E63);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: none;
+}
+
+.logo-text:hover {
+    transform: scale(1.05);
+}
+
+.logo-subtitle {
+    color: #616161;
+    opacity: 1;
+}
+
+/* 返回按钮 - 浅色版本 */
+.header-actions .btn-secondary {
+    background: #F5F5F5;
+    color: #D4577B;
+    border: 1px solid #E0E0E0;
+}
+
+.header-actions .btn-secondary:hover {
+    background: #D4577B;
+    color: #FFFFFF;
+    border-color: #D4577B;
+    transform: translateX(-2px);
+    box-shadow: 0 2px 8px rgba(212, 87, 123, 0.2);
+}
+
+/* ====================
+   卡片样式 - 浅色版本
+   ==================== */
+.card {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: none;
+}
+
+.card::before {
+    display: none; /* 移除渐变顶部边框 */
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-color: rgba(212, 87, 123, 0.3);
+}
+
+.section-title {
+    color: #212121;
+    text-shadow: none;
+}
+
+.section-title::after {
+    background: linear-gradient(135deg, #D4577B, #E899B3);
+}
+
+/* ====================
+   按钮样式 - 浅色版本
+   ==================== */
+.btn {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #D4577B, #E899B3);
+    color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(212, 87, 123, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 87, 123, 0.3);
+}
+
+.btn-secondary {
+    background: #F5F5F5;
+    color: #D4577B;
+    border: 1px solid #E0E0E0;
+}
+
+.btn-secondary:hover {
+    background: #FAFAFA;
+    border-color: #D4577B;
+    box-shadow: 0 2px 8px rgba(212, 87, 123, 0.15);
+}
+
+/* ====================
+   表单元素 - 浅色版本
+   ==================== */
+.form-input,
+.form-select,
+.form-textarea {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    color: #212121;
+    backdrop-filter: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #D4577B;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(212, 87, 123, 0.08);
+}
+
+.form-label {
+    color: #616161;
+}
+
+/* ====================
+   导航卡片 - 浅色版本
+   ==================== */
+.nav-card {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-card::before {
+    display: none;
+}
+
+.nav-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: #D4577B;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    filter: none;
+}
+
+.card-title {
+    color: #212121;
+}
+
+.card-desc {
+    color: #616161;
+}
+
+/* 不同功能卡片的悬停颜色 */
+.nav-card:nth-child(1):hover {
+    border-color: #D4577B;
+    box-shadow: 0 8px 20px rgba(212, 87, 123, 0.15);
+}
+
+.nav-card:nth-child(2):hover {
+    border-color: #3AADA8;
+    box-shadow: 0 8px 20px rgba(58, 173, 168, 0.15);
+}
+
+.nav-card:nth-child(3):hover {
+    border-color: #C9962D;
+    box-shadow: 0 8px 20px rgba(201, 150, 45, 0.15);
+}
+
+.nav-card:nth-child(4):hover {
+    border-color: #4A6FB5;
+    box-shadow: 0 8px 20px rgba(74, 111, 181, 0.15);
+}
+
+/* ====================
+   标签样式 - 浅色版本
+   ==================== */
+.tag {
+    background: #F5F5F5;
+    color: #616161;
+    border: 1px solid #E0E0E0;
+}
+
+.tag-gold {
+    background: rgba(201, 150, 45, 0.08);
+    color: #C9962D;
+    border-color: rgba(201, 150, 45, 0.2);
+}
+
+.tag-lucky {
+    background: rgba(212, 87, 123, 0.08);
+    color: #D4577B;
+    border-color: rgba(212, 87, 123, 0.2);
+}
+
+.tag-success {
+    background: rgba(58, 173, 168, 0.08);
+    color: #3AADA8;
+    border-color: rgba(58, 173, 168, 0.2);
+}
+
+/* ====================
+   列表项 - 浅色版本
+   ==================== */
+.list-item {
+    background: #FAFAFA;
+    border: 1px solid #E0E0E0;
+}
+
+.list-item:hover {
+    background: #F5F5F5;
+    border-color: #BDBDBD;
+    transform: translateX(4px);
+}
+
+/* ====================
+   进度条 - 浅色版本
+   ==================== */
+.progress-bar {
+    background: #F5F5F5;
+    border: 1px solid #E0E0E0;
+}
+
+.progress-fill {
+    background: linear-gradient(135deg, #D4577B, #E899B3);
+}
+
+/* ====================
+   提示框 - 浅色版本
+   ==================== */
+.tooltip-content {
+    background: #FFFFFF;
+    color: #212121;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================
+   分割线 - 浅色版本
+   ==================== */
+.divider {
+    background: linear-gradient(90deg,
+        transparent 0%,
+        #E0E0E0 50%,
+        transparent 100%);
+}
+
+/* ====================
+   加载动画 - 浅色版本
+   ==================== */
+.loading {
+    border: 3px solid #F5F5F5;
+    border-top-color: #D4577B;
+}

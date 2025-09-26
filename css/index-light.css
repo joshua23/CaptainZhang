@@ -1,0 +1,308 @@
+/* ================================
+   首页浅色主题覆盖 - 张大师智慧生活导航系统
+   修复今日概览等组件的配色问题
+   ================================ */
+
+/* ====================
+   主应用容器
+   ==================== */
+.main-app {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+    min-height: 100vh;
+}
+
+.app-main {
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ====================
+   今日概览卡片
+   ==================== */
+.today-overview {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+}
+
+.today-overview .section-title {
+    color: #212121;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, #D4577B, #E899B3) 1;
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* 日期显示区域 */
+.date-display {
+    padding: 1rem;
+    background: linear-gradient(135deg, #FAFAFA, #F5F5F5);
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+}
+
+.solar-date {
+    font-size: 1.25rem;
+    color: #212121;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.lunar-date {
+    font-size: 1rem;
+    color: #D4577B;
+    margin-bottom: 0.25rem;
+}
+
+.solar-term {
+    font-size: 0.875rem;
+    color: #616161;
+}
+
+/* 运势预览区域 */
+.fortune-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fortune-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #FAFAFA;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+    transition: all 0.3s ease;
+}
+
+.fortune-item:hover {
+    background: #F5F5F5;
+    border-color: #D4577B;
+    transform: translateX(4px);
+}
+
+.fortune-label {
+    color: #616161;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.fortune-stars {
+    color: #C9962D;
+    font-size: 1.125rem;
+    text-shadow: 0 0 4px rgba(201, 150, 45, 0.2);
+}
+
+.fortune-value {
+    color: #212121;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.fortune-value.color-blue {
+    color: #4A6FB5;
+}
+
+/* ====================
+   功能导航网格
+   ==================== */
+.nav-grid {
+    margin-bottom: 2rem;
+}
+
+.nav-grid .section-title {
+    color: #212121;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #F5F5F5;
+}
+
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.nav-card {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.nav-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #D4577B;
+}
+
+/* 为每个功能卡片添加独特的悬停颜色 */
+.nav-cards > .nav-card:nth-child(1):hover {
+    border-color: #D4577B;
+    background: linear-gradient(135deg, #FFFFFF, rgba(212, 87, 123, 0.02));
+}
+
+.nav-cards > .nav-card:nth-child(2):hover {
+    border-color: #3AADA8;
+    background: linear-gradient(135deg, #FFFFFF, rgba(58, 173, 168, 0.02));
+}
+
+.nav-cards > .nav-card:nth-child(3):hover {
+    border-color: #C9962D;
+    background: linear-gradient(135deg, #FFFFFF, rgba(201, 150, 45, 0.02));
+}
+
+.nav-cards > .nav-card:nth-child(4):hover {
+    border-color: #4A6FB5;
+    background: linear-gradient(135deg, #FFFFFF, rgba(74, 111, 181, 0.02));
+}
+
+.nav-cards > .nav-card:nth-child(5):hover {
+    border-color: #4CAF50;
+    background: linear-gradient(135deg, #FFFFFF, rgba(76, 175, 80, 0.02));
+}
+
+.nav-cards > .nav-card:nth-child(6):hover {
+    border-color: #F44336;
+    background: linear-gradient(135deg, #FFFFFF, rgba(244, 67, 54, 0.02));
+}
+
+.nav-card .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    filter: none;
+}
+
+.nav-card .card-title {
+    font-size: 1.125rem;
+    color: #212121;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.nav-card .card-desc {
+    font-size: 0.875rem;
+    color: #616161;
+    line-height: 1.4;
+}
+
+/* ====================
+   每日智慧卡片
+   ==================== */
+.daily-wisdom {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.daily-wisdom .section-title {
+    color: #212121;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, #C9962D, #E6C157) 1;
+}
+
+.wisdom-quote {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #FAFAFA, #F5F5F5);
+    border-left: 4px solid #C9962D;
+    border-radius: 0 8px 8px 0;
+    margin: 0;
+}
+
+.wisdom-quote p {
+    color: #212121;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin: 0;
+    font-style: italic;
+}
+
+.wisdom-quote cite {
+    display: block;
+    margin-top: 1rem;
+    color: #616161;
+    font-size: 0.875rem;
+    text-align: right;
+    font-style: normal;
+}
+
+/* ====================
+   底部信息
+   ==================== */
+.app-footer {
+    background: #FAFAFA;
+    color: #616161;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid #E0E0E0;
+    margin-top: 3rem;
+}
+
+.app-footer p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* ====================
+   响应式优化
+   ==================== */
+@media (max-width: 768px) {
+    .overview-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .nav-card {
+        padding: 1rem;
+    }
+
+    .nav-card .card-icon {
+        font-size: 2rem;
+    }
+
+    .nav-card .card-title {
+        font-size: 1rem;
+    }
+
+    .nav-card .card-desc {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
