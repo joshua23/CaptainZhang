@@ -1,0 +1,656 @@
+/* ================================
+   张大师项目设计优化方案
+   Design Optimization for Captain Zhang
+   ================================ */
+
+/* ====================
+   一、视频与页面视觉协调优化
+   ==================== */
+
+/* 1.1 视频容器优化 - 增强视觉层次感 */
+.master-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 改为cover确保填满容器 */
+    border-radius: 50%;
+    position: relative;
+    /* 多层光晕效果增强神秘感 */
+    filter:
+        drop-shadow(0 0 20px rgba(139, 0, 255, 0.3))
+        drop-shadow(0 0 40px rgba(139, 0, 255, 0.2))
+        drop-shadow(0 0 60px rgba(139, 0, 255, 0.1));
+    animation: videoGlow 4s ease-in-out infinite, videoFloat 6s ease-in-out infinite;
+    /* 添加边框装饰 */
+    border: 2px solid rgba(139, 0, 255, 0.2);
+    box-shadow:
+        inset 0 0 20px rgba(139, 0, 255, 0.1),
+        0 0 30px rgba(139, 0, 255, 0.3);
+}
+
+/* 1.2 视频悬浮动画 - 增加灵动感 */
+@keyframes videoFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    25% {
+        transform: translateY(-5px) scale(1.02);
+    }
+    75% {
+        transform: translateY(5px) scale(0.98);
+    }
+}
+
+/* 1.3 改进光晕动画 - 更柔和的呼吸效果 */
+@keyframes videoGlow {
+    0%, 100% {
+        filter:
+            drop-shadow(0 0 15px rgba(139, 0, 255, 0.3))
+            drop-shadow(0 0 30px rgba(139, 0, 255, 0.2));
+        opacity: 0.95;
+    }
+    50% {
+        filter:
+            drop-shadow(0 0 25px rgba(139, 0, 255, 0.5))
+            drop-shadow(0 0 50px rgba(139, 0, 255, 0.3));
+        opacity: 1;
+    }
+}
+
+/* 1.4 视频遮罩层 - 增强神秘感 */
+.master-video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        transparent 40%,
+        rgba(139, 0, 255, 0.05) 70%,
+        rgba(139, 0, 255, 0.1) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ====================
+   二、圆角Logo优化与视频搭配
+   ==================== */
+
+/* 2.1 Logo容器增强 */
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 3px;
+    background: linear-gradient(135deg,
+        rgba(139, 0, 255, 0.2),
+        rgba(255, 215, 0, 0.2),
+        rgba(139, 0, 255, 0.2));
+    border-radius: 24px;
+    animation: logoGradient 8s ease-in-out infinite;
+}
+
+/* 2.2 Logo渐变动画 */
+@keyframes logoGradient {
+    0%, 100% {
+        background: linear-gradient(135deg,
+            rgba(139, 0, 255, 0.2),
+            rgba(255, 215, 0, 0.2));
+    }
+    50% {
+        background: linear-gradient(135deg,
+            rgba(255, 215, 0, 0.2),
+            rgba(139, 0, 255, 0.2));
+    }
+}
+
+/* 2.3 优化Logo样式 */
+.welcome-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 20px;
+    /* 内发光效果 */
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(139, 0, 255, 0.2),
+        0 8px 16px rgba(139, 0, 255, 0.1);
+    /* 微妙的3D效果 */
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2.4 Logo悬停3D翻转效果 */
+.welcome-logo:hover {
+    transform: perspective(1000px) rotateY(10deg) scale(1.05);
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 8px 16px rgba(139, 0, 255, 0.3),
+        0 16px 32px rgba(139, 0, 255, 0.2);
+}
+
+/* ====================
+   三、整体用户体验设计细节优化
+   ==================== */
+
+/* 3.1 背景粒子效果增强 */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    /* 添加滤镜增强效果 */
+    filter: blur(0.5px);
+}
+
+/* 3.2 创建动态星空背景 */
+.welcome-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.2), transparent),
+        radial-gradient(2px 2px at 60% 70%, rgba(255, 255, 255, 0.15), transparent),
+        radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 300px 300px, 200px 200px, 100px 100px;
+    animation: starsMove 120s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* 3.3 漂浮符号优化 - 更流畅的动画 */
+.symbol {
+    font-size: 28px;
+    /* 渐变色文字 */
+    background: linear-gradient(135deg, #8B00FF, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* 增强发光效果 */
+    filter: drop-shadow(0 0 8px rgba(139, 0, 255, 0.6));
+    animation: floatSymbolEnhanced 10s ease-in-out infinite;
+}
+
+@keyframes floatSymbolEnhanced {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(20px) rotate(0deg) scale(0.8);
+    }
+    20% {
+        opacity: 0.6;
+        transform: translateY(0) rotate(5deg) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) rotate(-5deg) scale(1.1);
+    }
+    80% {
+        opacity: 0.6;
+        transform: translateY(0) rotate(5deg) scale(1);
+    }
+}
+
+/* 3.4 按钮优化 - 增强交互感 */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #8B00FF, #6600CC);
+    /* 添加微妙纹理 */
+    background-image:
+        linear-gradient(135deg, #8B00FF, #6600CC),
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.03) 10px,
+            rgba(255, 255, 255, 0.03) 20px
+        );
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 3.5 按钮波纹效果 */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* 3.6 开始按钮呼吸灯效果增强 */
+.btn-glow {
+    animation: glowPulseEnhanced 2s ease-in-out infinite;
+}
+
+@keyframes glowPulseEnhanced {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(139, 0, 255, 0.3),
+            0 0 40px rgba(139, 0, 255, 0.2),
+            inset 0 0 10px rgba(255, 255, 255, 0.1);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow:
+            0 0 30px rgba(139, 0, 255, 0.5),
+            0 0 60px rgba(139, 0, 255, 0.3),
+            inset 0 0 15px rgba(255, 255, 255, 0.2);
+        transform: scale(1.02);
+    }
+}
+
+/* ====================
+   四、动画时序与性能优化
+   ==================== */
+
+/* 4.1 入场动画时序优化 */
+.welcome-content {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.master-silhouette {
+    animation: fadeInScale 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.title-container {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+}
+
+.action-container {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 4.2 光环动画优化 - 使用GPU加速 */
+.aura-ring {
+    will-change: transform, opacity;
+    transform: translate(-50%, -50%) translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* 4.3 减少重排重绘 */
+.mystic-aura {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* ====================
+   五、色彩系统微调
+   ==================== */
+
+:root {
+    /* 优化紫色系渐变 */
+    --color-primary: #8B00FF;
+    --color-primary-light: #A020FF;
+    --color-primary-dark: #6600CC;
+    --color-primary-darker: #4B0082;
+
+    /* 增加辅助色 */
+    --color-accent: #E91E63;
+    --color-accent-light: #F06292;
+
+    /* 优化金色系 */
+    --color-gold: #FFD700;
+    --color-gold-light: #FFE57F;
+    --color-gold-dark: #FFC107;
+
+    /* 背景色优化 */
+    --bg-gradient-start: #0a0e27;
+    --bg-gradient-middle: #1a0033;
+    --bg-gradient-end: #0a0e27;
+}
+
+/* 5.1 背景渐变优化 */
+.welcome-page {
+    background:
+        linear-gradient(135deg,
+            var(--bg-gradient-start) 0%,
+            var(--bg-gradient-middle) 50%,
+            var(--bg-gradient-end) 100%),
+        radial-gradient(circle at 50% 50%,
+            rgba(139, 0, 255, 0.1) 0%,
+            transparent 70%);
+    /* 添加微妙的动态背景 */
+    animation: bgShift 20s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ====================
+   六、交互体验提升
+   ==================== */
+
+/* 6.1 导航卡片悬停效果增强 */
+.nav-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.nav-card:hover {
+    transform: translateY(-8px) rotateX(5deg);
+    box-shadow:
+        0 15px 30px rgba(139, 0, 255, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 6.2 卡片图标动画 */
+.nav-card:hover .card-icon {
+    animation: iconBounce 0.6s ease-in-out;
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.2);
+    }
+    60% {
+        transform: scale(0.95);
+    }
+}
+
+/* 6.3 焦点状态优化 */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(139, 0, 255, 0.1);
+}
+
+/* 6.4 加载状态优化 */
+.loading-skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(139, 0, 255, 0.05) 0%,
+        rgba(139, 0, 255, 0.1) 50%,
+        rgba(139, 0, 255, 0.05) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* ====================
+   七、移动端适配优化
+   ==================== */
+
+/* 7.1 触摸反馈优化 */
+@media (hover: none) {
+    .btn-primary:active {
+        transform: scale(0.98);
+        box-shadow:
+            0 2px 10px rgba(139, 0, 255, 0.3),
+            inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* 7.2 移动端视频优化 */
+@media (max-width: 768px) {
+    .master-video {
+        /* 移动端使用较小的光晕效果 */
+        filter:
+            drop-shadow(0 0 10px rgba(139, 0, 255, 0.3))
+            drop-shadow(0 0 20px rgba(139, 0, 255, 0.2));
+    }
+
+    .master-silhouette {
+        width: 280px;
+        height: 280px;
+    }
+
+    /* 简化动画 */
+    .aura-ring {
+        animation-duration: 4s;
+    }
+
+    .symbol {
+        font-size: 22px;
+        animation-duration: 12s;
+    }
+}
+
+/* 7.3 小屏幕优化 */
+@media (max-width: 480px) {
+    .master-silhouette {
+        width: 220px;
+        height: 220px;
+    }
+
+    .master-video {
+        border-radius: 40%; /* 稍微减少圆角 */
+    }
+
+    /* 减少动画复杂度 */
+    .floating-symbols {
+        display: none; /* 小屏幕隐藏漂浮符号 */
+    }
+
+    .welcome-logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 16px;
+    }
+
+    /* 优化按钮大小 */
+    .btn-primary {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+}
+
+/* ====================
+   八、性能优化
+   ==================== */
+
+/* 8.1 使用CSS containment */
+.nav-card {
+    contain: layout style;
+}
+
+.card {
+    contain: layout style;
+}
+
+/* 8.2 优化动画性能 */
+.master-video,
+.aura-ring,
+.symbol,
+.welcome-logo {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* 8.3 减少复合层 */
+.particles {
+    will-change: auto;
+}
+
+/* ====================
+   九、无障碍优化
+   ==================== */
+
+/* 9.1 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    .btn-primary {
+        border: 2px solid currentColor;
+    }
+
+    .nav-card {
+        border: 1px solid var(--color-dark);
+    }
+}
+
+/* 9.2 减少动画模式 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 9.3 键盘导航优化 */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ====================
+   十、暗色模式优化
+   ==================== */
+
+@media (prefers-color-scheme: dark) {
+    .welcome-page {
+        background:
+            linear-gradient(135deg,
+                #000000 0%,
+                #0a001a 50%,
+                #000000 100%);
+    }
+
+    .master-video {
+        filter:
+            brightness(0.9)
+            drop-shadow(0 0 20px rgba(139, 0, 255, 0.4))
+            drop-shadow(0 0 40px rgba(139, 0, 255, 0.3));
+    }
+
+    .card {
+        background: rgba(30, 30, 30, 0.95);
+        border: 1px solid rgba(139, 0, 255, 0.2);
+    }
+}
+
+/* ====================
+   十一、特殊效果
+   ==================== */
+
+/* 11.1 磨砂玻璃效果 */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 11.2 霓虹发光文字 */
+.neon-text {
+    text-shadow:
+        0 0 10px var(--color-primary),
+        0 0 20px var(--color-primary),
+        0 0 30px var(--color-primary),
+        0 0 40px var(--color-primary-dark);
+}
+
+/* 11.3 渐变边框 */
+.gradient-border {
+    position: relative;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-gold));
+    border-radius: inherit;
+    z-index: -1;
+    animation: gradientRotate 3s linear infinite;
+}
+
+@keyframes gradientRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

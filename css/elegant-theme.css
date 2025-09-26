@@ -1,0 +1,377 @@
+/* ================================
+   雅韵东方 - 张大师智慧生活导航系统
+   基于WDCC 2025设计美学的配色方案
+   ================================ */
+
+:root {
+    /* ====================
+       主题色 - 东方雅韵
+       ==================== */
+    --color-primary: #D4577B;        /* 辛演粉 - 主色调 */
+    --color-primary-light: #E17899;  /* 浅粉 */
+    --color-primary-dark: #B93E63;   /* 深粉 */
+    --color-primary-rgb: 212, 87, 123;
+
+    /* 辅助主色 */
+    --color-secondary: #3AADA8;      /* 鼎和青 - 清新雅致 */
+    --color-secondary-light: #5BC4BF;
+    --color-secondary-dark: #2B9490;
+
+    /* 点缀色 */
+    --color-accent-gold: #D4A15F;    /* 霜礼金 - 尊贵典雅 */
+    --color-accent-blue: #4A6FB5;    /* 醉阴蓝 - 深邃神秘 */
+
+    /* ====================
+       功能色 - 和谐统一
+       ==================== */
+    --color-success: #3AADA8;        /* 成功 - 青绿 */
+    --color-warning: #D4A15F;        /* 警告 - 金黄 */
+    --color-danger: #D4577B;         /* 危险 - 粉红 */
+    --color-info: #4A6FB5;           /* 信息 - 宝蓝 */
+
+    /* ====================
+       五行配色 - 现代演绎
+       ==================== */
+    --color-wood: #3AADA8;     /* 木 - 青绿生机 */
+    --color-fire: #D4577B;     /* 火 - 粉红热情 */
+    --color-earth: #D4A15F;    /* 土 - 金黄厚重 */
+    --color-metal: #C5C5C5;    /* 金 - 银灰锐利 */
+    --color-water: #4A6FB5;    /* 水 - 蓝色流动 */
+
+    /* ====================
+       背景色 - 典雅层次
+       ==================== */
+    --bg-primary: #1A1618;           /* 主背景 - 深棕黑 */
+    --bg-secondary: #231F20;         /* 次背景 - 炭黑 */
+    --bg-tertiary: #2D2829;          /* 第三层 - 暖灰 */
+    --bg-card: rgba(35, 31, 32, 0.85); /* 卡片背景 */
+    --bg-overlay: rgba(26, 22, 24, 0.95); /* 遮罩层 */
+
+    /* 特殊背景 */
+    --bg-gradient-warm: linear-gradient(135deg, #1A1618 0%, #2D2829 50%, #3D3436 100%);
+    --bg-gradient-elegant: linear-gradient(135deg,
+        rgba(212, 87, 123, 0.05) 0%,
+        rgba(58, 173, 168, 0.05) 50%,
+        rgba(212, 161, 95, 0.05) 100%);
+
+    /* ====================
+       文本色 - 清晰优雅
+       ==================== */
+    --text-primary: #F5F0E8;          /* 主文本 - 米白 */
+    --text-secondary: #D4C5B9;       /* 次要文本 - 浅棕 */
+    --text-muted: #A09486;           /* 弱化文本 - 灰棕 */
+    --text-accent-pink: #D4577B;     /* 强调文本 - 粉色 */
+    --text-accent-gold: #D4A15F;     /* 强调文本 - 金色 */
+    --text-inverse: #1A1618;         /* 反色文本 */
+
+    /* ====================
+       边框色 - 精致细腻
+       ==================== */
+    --border-light: rgba(212, 161, 95, 0.15);
+    --border-medium: rgba(212, 161, 95, 0.25);
+    --border-strong: rgba(212, 161, 95, 0.4);
+    --border-accent: rgba(212, 87, 123, 0.3);
+    --border-elegant: linear-gradient(135deg,
+        rgba(212, 87, 123, 0.3),
+        rgba(212, 161, 95, 0.3));
+
+    /* ====================
+       阴影 - 柔和立体
+       ==================== */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+    --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.7);
+
+    --shadow-glow-pink: 0 0 30px rgba(212, 87, 123, 0.4);
+    --shadow-glow-gold: 0 0 30px rgba(212, 161, 95, 0.3);
+    --shadow-glow-cyan: 0 0 30px rgba(58, 173, 168, 0.3);
+    --shadow-glow-blue: 0 0 30px rgba(74, 111, 181, 0.3);
+
+    /* ====================
+       渐变色 - 流光溢彩
+       ==================== */
+    --gradient-primary: linear-gradient(135deg, #D4577B 0%, #B93E63 100%);
+    --gradient-secondary: linear-gradient(135deg, #3AADA8 0%, #2B9490 100%);
+    --gradient-gold: linear-gradient(135deg, #D4A15F 0%, #B88946 100%);
+    --gradient-mystic: linear-gradient(135deg, #4A6FB5 0%, #3A5A9A 100%);
+
+    /* 多彩渐变 */
+    --gradient-elegant: linear-gradient(135deg,
+        #D4577B 0%,
+        #3AADA8 33%,
+        #D4A15F 66%,
+        #4A6FB5 100%);
+
+    --gradient-aurora: linear-gradient(135deg,
+        rgba(212, 87, 123, 0.2) 0%,
+        rgba(58, 173, 168, 0.2) 25%,
+        rgba(212, 161, 95, 0.2) 50%,
+        rgba(74, 111, 181, 0.2) 75%,
+        rgba(212, 87, 123, 0.2) 100%);
+
+    /* ====================
+       特殊效果
+       ==================== */
+    --glow-pink: drop-shadow(0 0 20px rgba(212, 87, 123, 0.6));
+    --glow-gold: drop-shadow(0 0 20px rgba(212, 161, 95, 0.5));
+    --glow-cyan: drop-shadow(0 0 20px rgba(58, 173, 168, 0.5));
+    --glow-blue: drop-shadow(0 0 20px rgba(74, 111, 181, 0.5));
+}
+
+/* ====================
+   应用新配色
+   ==================== */
+
+/* 全局背景 */
+body {
+    background: var(--bg-gradient-warm);
+    color: var(--text-primary);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-gradient-elegant);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 欢迎页优化 */
+.welcome-page {
+    background: var(--bg-gradient-warm);
+    position: relative;
+}
+
+.welcome-page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-aurora);
+    animation: auroraFlow 15s ease-in-out infinite;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+@keyframes auroraFlow {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(-5%) translateY(-5%); }
+    50% { transform: translateX(5%) translateY(5%); }
+    75% { transform: translateX(-3%) translateY(3%); }
+}
+
+/* 卡片样式优化 */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-elegant);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.card:hover::before {
+    opacity: 0.1;
+}
+
+/* 按钮样式优化 */
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-accent);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: var(--shadow-md), var(--shadow-glow-pink);
+    transform: translateY(-2px);
+}
+
+.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* 视频光晕优化 */
+.master-video {
+    filter: var(--glow-gold);
+    border: 2px solid transparent;
+    background: linear-gradient(#1A1618, #1A1618) padding-box,
+                var(--gradient-elegant) border-box;
+}
+
+/* Logo优化 */
+.welcome-logo {
+    border: 3px solid transparent;
+    background: linear-gradient(#1A1618, #1A1618) padding-box,
+                var(--gradient-gold) border-box;
+    filter: var(--glow-gold);
+}
+
+/* 标题优化 */
+.master-title {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(212, 161, 95, 0.4);
+    position: relative;
+}
+
+.master-title::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleShimmer 3s ease-in-out infinite;
+}
+
+@keyframes titleShimmer {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.5; }
+}
+
+/* 导航卡片优化 */
+.nav-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-aurora);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-card:hover {
+    border-color: var(--color-accent-gold);
+    transform: translateY(-4px) scale(1.02);
+}
+
+.nav-card:hover::before {
+    opacity: 0.1;
+}
+
+/* 不同功能卡片的独特颜色 */
+.nav-card:nth-child(1):hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg), var(--shadow-glow-pink);
+}
+
+.nav-card:nth-child(2):hover {
+    border-color: var(--color-secondary);
+    box-shadow: var(--shadow-lg), var(--shadow-glow-cyan);
+}
+
+.nav-card:nth-child(3):hover {
+    border-color: var(--color-accent-gold);
+    box-shadow: var(--shadow-lg), var(--shadow-glow-gold);
+}
+
+.nav-card:nth-child(4):hover {
+    border-color: var(--color-accent-blue);
+    box-shadow: var(--shadow-lg), var(--shadow-glow-blue);
+}
+
+/* 粒子效果优化 */
+.particle {
+    width: 3px;
+    height: 3px;
+    background: radial-gradient(circle,
+        var(--color-accent-gold) 0%,
+        transparent 70%);
+    box-shadow: 0 0 6px var(--color-accent-gold);
+}
+
+/* 光环效果优化 */
+.aura-ring {
+    border: 2px solid transparent;
+    background: linear-gradient(#1A1618, #1A1618) padding-box,
+                var(--gradient-elegant) border-box;
+}
+
+/* 浮动符号优化 */
+.symbol {
+    color: var(--color-accent-gold);
+    text-shadow: 0 0 20px rgba(212, 161, 95, 0.6);
+    font-weight: bold;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-gold);
+    border-radius: 6px;
+    border: 2px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-primary);
+}
+
+/* 选中文本样式 */
+::selection {
+    background: rgba(212, 87, 123, 0.3);
+    color: var(--text-primary);
+}
+
+::-moz-selection {
+    background: rgba(212, 87, 123, 0.3);
+    color: var(--text-primary);
+}
