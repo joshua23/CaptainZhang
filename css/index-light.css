@@ -4,6 +4,104 @@
    ================================ */
 
 /* ====================
+   欢迎页面浅色主题
+   ==================== */
+.welcome-page {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 50%, #FAFAFA 100%);
+}
+
+.master-video {
+    filter: drop-shadow(0 0 20px rgba(212, 87, 123, 0.3));
+}
+
+@keyframes videoGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 15px rgba(212, 87, 123, 0.2));
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(212, 87, 123, 0.4));
+    }
+}
+
+.master-image {
+    filter: drop-shadow(0 0 20px rgba(212, 87, 123, 0.3));
+}
+
+.aura-ring {
+    border-color: rgba(212, 87, 123, 0.15);
+    box-shadow:
+        0 0 50px rgba(212, 87, 123, 0.1),
+        inset 0 0 50px rgba(212, 87, 123, 0.1);
+}
+
+.floating-symbols .symbol {
+    color: #D4577B;
+    text-shadow: 0 0 10px rgba(212, 87, 123, 0.3);
+}
+
+.master-title {
+    background: linear-gradient(135deg, #D4577B, #E899B3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.master-subtitle {
+    color: #616161;
+}
+
+.master-desc {
+    color: #757575;
+}
+
+.welcome-logo {
+    filter: drop-shadow(0 0 15px rgba(212, 87, 123, 0.3));
+    background: linear-gradient(135deg, rgba(212, 87, 123, 0.05), rgba(232, 153, 179, 0.05));
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #D4577B, #E899B3);
+    border: 1px solid #D4577B;
+    color: white;
+    box-shadow: 0 4px 15px rgba(212, 87, 123, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #C14469, #D4577B);
+    box-shadow: 0 6px 20px rgba(212, 87, 123, 0.4);
+}
+
+.btn-glow {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(212, 87, 123, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(212, 87, 123, 0.6);
+    }
+}
+
+.login-link {
+    color: #616161;
+}
+
+.login-link a {
+    color: #D4577B;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.particles {
+    background-image: radial-gradient(circle, rgba(212, 87, 123, 0.1) 1px, transparent 1px);
+}
+
+/* ====================
    主应用容器
    ==================== */
 .main-app {
