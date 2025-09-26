@@ -1,0 +1,379 @@
+/* ================================
+   全局浅色主题强制覆盖 - 张大师智慧生活导航系统
+   彻底移除所有暗色主题，确保整个系统使用统一的浅色主题
+   ================================ */
+
+/* ====================
+   根变量强制覆盖
+   ==================== */
+:root {
+    /* 移除所有暗色变量，统一使用浅色 */
+    --color-primary: #D4577B !important;
+    --color-primary-dark: #B83E62 !important;
+    --color-primary-light: #E899B3 !important;
+
+    /* 移除原有的 dark 变量 */
+    --color-dark: #212121 !important;  /* 原本是 #1A1A1A */
+    --color-dark-gray: #424242 !important;  /* 原本是 #333333 */
+
+    /* 背景色全部使用浅色 */
+    --bg-primary: #FFFFFF !important;
+    --bg-secondary: #FAFAFA !important;
+    --bg-tertiary: #F5F5F5 !important;
+
+    /* 文字色使用深色确保可读性 */
+    --text-primary: #212121 !important;
+    --text-secondary: #424242 !important;
+    --text-tertiary: #616161 !important;
+
+    /* 中性色更新 */
+    --color-gray: #616161 !important;
+    --color-light-gray: #9E9E9E !important;
+    --color-light: #F5F5F5 !important;
+    --color-white: #FFFFFF !important;
+}
+
+/* ====================
+   欢迎页面强制浅色
+   ==================== */
+.welcome-page {
+    /* 覆盖暗色渐变背景 */
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 50%, #FAFAFA 100%) !important;
+    min-height: 100vh;
+}
+
+/* 移除暗色背景的粒子效果 */
+.particles {
+    background-image: radial-gradient(circle, rgba(212, 87, 123, 0.08) 1px, transparent 1px) !important;
+    background-size: 50px 50px !important;
+}
+
+/* ====================
+   主应用容器
+   ==================== */
+.main-app {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%) !important;
+    color: #212121 !important;
+}
+
+body {
+    background: #FFFFFF !important;
+    color: #212121 !important;
+}
+
+/* ====================
+   头部和导航
+   ==================== */
+.app-header {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #E0E0E0 !important;
+    color: #212121 !important;
+}
+
+.header-content {
+    background: transparent !important;
+    color: #212121 !important;
+}
+
+.logo-text,
+.logo-link {
+    color: #D4577B !important;
+}
+
+.logo-subtitle {
+    color: #616161 !important;
+}
+
+.date-info,
+.time-info,
+.header-info {
+    color: #616161 !important;
+}
+
+/* ====================
+   卡片组件
+   ==================== */
+.card {
+    background: #FFFFFF !important;
+    border: 1px solid #E0E0E0 !important;
+    color: #212121 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ====================
+   功能导航卡片
+   ==================== */
+.nav-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E0E0E0 !important;
+    color: #212121 !important;
+}
+
+.nav-card:hover {
+    background: linear-gradient(135deg, #FFFFFF, rgba(212, 87, 123, 0.02)) !important;
+    border-color: #D4577B !important;
+}
+
+.card-title {
+    color: #212121 !important;
+}
+
+.card-desc {
+    color: #616161 !important;
+}
+
+/* ====================
+   节标题修复
+   ==================== */
+.section-title {
+    color: #212121 !important;  /* 修复 var(--color-dark) */
+}
+
+/* ====================
+   日期显示修复
+   ==================== */
+.solar-date {
+    color: #212121 !important;
+}
+
+.lunar-date {
+    color: #D4577B !important;  /* 不再使用 var(--color-dark) */
+}
+
+.solar-term {
+    color: #616161 !important;
+}
+
+/* ====================
+   运势显示
+   ==================== */
+.fortune-label {
+    color: #616161 !important;
+}
+
+.fortune-value {
+    color: #212121 !important;  /* 不再使用 var(--color-dark) */
+}
+
+.fortune-stars {
+    color: #FFD700 !important;
+}
+
+/* ====================
+   每日智慧卡片
+   ==================== */
+.daily-wisdom {
+    /* 使用品牌色而不是暗紫色 */
+    background: linear-gradient(135deg, #D4577B, #E899B3) !important;
+    color: #FFFFFF !important;
+}
+
+.wisdom-quote {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.wisdom-quote p {
+    color: #FFFFFF !important;
+}
+
+.wisdom-quote cite {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ====================
+   页脚修复
+   ==================== */
+.app-footer {
+    background: #FAFAFA !important;  /* 不再使用 var(--color-dark) */
+    color: #616161 !important;
+    border-top: 1px solid #E0E0E0 !important;
+}
+
+.app-footer p {
+    color: #616161 !important;
+    margin: 0;
+}
+
+/* ====================
+   按钮样式
+   ==================== */
+.btn {
+    background: #FFFFFF !important;
+    color: #212121 !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #D4577B, #E899B3) !important;
+    color: #FFFFFF !important;
+    border: 1px solid #D4577B !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #C14469, #D4577B) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 87, 123, 0.3) !important;
+}
+
+.btn-secondary {
+    background: #FAFAFA !important;
+    color: #424242 !important;
+    border: 1px solid #BDBDBD !important;
+}
+
+.btn-secondary:hover {
+    background: #F5F5F5 !important;
+    border-color: #D4577B !important;
+    color: #D4577B !important;
+}
+
+/* ====================
+   表单元素
+   ==================== */
+input,
+textarea,
+select,
+.form-input,
+.form-select,
+.form-textarea {
+    background: #FFFFFF !important;
+    border: 1px solid #BDBDBD !important;
+    color: #212121 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #D4577B !important;
+    outline: 2px solid rgba(212, 87, 123, 0.2) !important;
+    background: #FFFFFF !important;
+}
+
+/* ====================
+   文字颜色统一
+   ==================== */
+h1, h2, h3, h4, h5, h6 {
+    color: #212121 !important;
+}
+
+p {
+    color: #424242 !important;
+}
+
+span, div {
+    color: inherit !important;
+}
+
+a {
+    color: #D4577B !important;
+}
+
+a:hover {
+    color: #C14469 !important;
+}
+
+/* ====================
+   特殊组件修复
+   ==================== */
+
+/* 标题容器 */
+.title-container .master-title {
+    background: linear-gradient(135deg, #D4577B, #E899B3) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.master-subtitle {
+    color: #616161 !important;
+}
+
+.master-desc {
+    color: #757575 !important;
+}
+
+/* 浮动符号 */
+.floating-symbols .symbol {
+    color: #D4577B !important;
+    text-shadow: 0 0 10px rgba(212, 87, 123, 0.3) !important;
+}
+
+/* 光环效果 */
+.aura-ring {
+    border-color: rgba(212, 87, 123, 0.15) !important;
+    box-shadow: 0 0 50px rgba(212, 87, 123, 0.1),
+                inset 0 0 50px rgba(212, 87, 123, 0.1) !important;
+}
+
+/* 视频/图片效果 */
+.master-video,
+.master-image {
+    filter: drop-shadow(0 0 20px rgba(212, 87, 123, 0.3)) !important;
+}
+
+/* ====================
+   移除所有暗色模式媒体查询
+   ==================== */
+@media (prefers-color-scheme: dark) {
+    /* 即使系统是暗色模式，也强制使用浅色 */
+    * {
+        /* 不做任何改变，保持浅色 */
+    }
+}
+
+/* ====================
+   最终保障 - 确保没有漏网之鱼
+   ==================== */
+*[style*="background: #0a"],
+*[style*="background: #1a"],
+*[style*="background: #2a"],
+*[style*="background-color: #0a"],
+*[style*="background-color: #1a"],
+*[style*="background-color: #2a"] {
+    background: #FFFFFF !important;
+}
+
+/* 确保没有元素使用纯黑或深灰背景 */
+*[style*="background: rgb(0"],
+*[style*="background: rgb(10"],
+*[style*="background: rgb(26"],
+*[style*="background-color: rgb(0"],
+*[style*="background-color: rgb(10"],
+*[style*="background-color: rgb(26"] {
+    background: #FFFFFF !important;
+}
+
+/* ====================
+   响应式适配
+   ==================== */
+@media (max-width: 768px) {
+    body {
+        background: #FFFFFF !important;
+    }
+
+    .welcome-page {
+        background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%) !important;
+    }
+}
+
+/* ====================
+   打印样式
+   ==================== */
+@media print {
+    body {
+        background: #FFFFFF !important;
+        color: #000000 !important;
+    }
+
+    * {
+        background: transparent !important;
+        color: #000000 !important;
+    }
+}

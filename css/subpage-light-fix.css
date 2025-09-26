@@ -1,0 +1,504 @@
+/* ================================
+   子页面浅色主题修复 - 张大师智慧生活导航系统
+   修复所有子页面的暗色主题问题，确保文字清晰可读
+   ================================ */
+
+/* ====================
+   强制覆盖所有页面背景
+   ==================== */
+body {
+    background: #FFFFFF !important;
+    color: #212121 !important;
+    min-height: 100vh;
+}
+
+.app-main {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%) !important;
+    min-height: calc(100vh - 120px);
+}
+
+.container {
+    background: transparent !important;
+}
+
+/* ====================
+   页面头部修复
+   ==================== */
+.app-header {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #E0E0E0 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06) !important;
+}
+
+.header-content {
+    background: transparent !important;
+}
+
+.logo-text {
+    color: #D4577B !important;
+    font-weight: 600;
+}
+
+.logo-subtitle {
+    color: #616161 !important;
+}
+
+.logo-link {
+    color: #D4577B !important;
+    text-decoration: none;
+}
+
+.header-info,
+.date-info,
+.time-info {
+    color: #616161 !important;
+}
+
+/* ====================
+   卡片和容器修复
+   ==================== */
+.card,
+.section,
+.profile-card,
+.fortune-card,
+.calendar-grid,
+.lifestyle-card,
+.decision-card,
+.knowledge-card,
+.analysis-card,
+.quick-select,
+.date-detail,
+.today-almanac,
+.month-nav {
+    background: #FFFFFF !important;
+    border: 1px solid #E0E0E0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+    color: #212121 !important;
+}
+
+/* ====================
+   文字颜色修复
+   ==================== */
+h1, h2, h3, h4, h5, h6 {
+    color: #212121 !important;
+}
+
+p, span, div, li, td, th {
+    color: #424242 !important;
+}
+
+.section-title,
+.card-title,
+.detail-title {
+    color: #212121 !important;
+    font-weight: 600;
+}
+
+.section-subtitle,
+.card-subtitle {
+    color: #616161 !important;
+}
+
+label,
+.form-label {
+    color: #212121 !important;
+    font-weight: 500;
+}
+
+.help-text,
+.hint-text,
+.description {
+    color: #757575 !important;
+}
+
+/* ====================
+   表单元素修复
+   ==================== */
+.form-input,
+.form-select,
+.form-textarea,
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    background: #FFFFFF !important;
+    border: 1px solid #BDBDBD !important;
+    color: #212121 !important;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #D4577B !important;
+    outline: 2px solid rgba(212, 87, 123, 0.2) !important;
+    background: #FFFFFF !important;
+}
+
+.form-input::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: #9E9E9E !important;
+}
+
+/* ====================
+   按钮修复
+   ==================== */
+.btn,
+button {
+    background: #FFFFFF !important;
+    color: #212121 !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #D4577B, #E899B3) !important;
+    color: #FFFFFF !important;
+    border: 1px solid #D4577B !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #C14469, #D4577B) !important;
+    box-shadow: 0 4px 12px rgba(212, 87, 123, 0.3) !important;
+}
+
+.btn-secondary {
+    background: #FAFAFA !important;
+    color: #424242 !important;
+    border: 1px solid #BDBDBD !important;
+}
+
+.btn-secondary:hover {
+    background: #F5F5F5 !important;
+    border-color: #D4577B !important;
+    color: #D4577B !important;
+}
+
+/* ====================
+   特定页面修复
+   ==================== */
+
+/* 用户画像页面 */
+.profile-form {
+    background: transparent !important;
+}
+
+.bazi-display {
+    background: #FAFAFA !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.bazi-item {
+    color: #424242 !important;
+}
+
+.bazi-item strong {
+    color: #D4577B !important;
+}
+
+.element-bar {
+    background: #F5F5F5 !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.element-name {
+    color: #212121 !important;
+}
+
+.element-value {
+    color: #D4577B !important;
+}
+
+/* 今日运势页面 */
+.fortune-overview {
+    background: #FFFFFF !important;
+}
+
+.fortune-score {
+    color: #D4577B !important;
+}
+
+.fortune-item {
+    background: #FAFAFA !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.fortune-label {
+    color: #616161 !important;
+}
+
+.fortune-value {
+    color: #212121 !important;
+}
+
+.yiji-item,
+.tag-yi,
+.tag-ji {
+    font-weight: 500 !important;
+}
+
+.yiji-item.yi,
+.tag-yi {
+    background: rgba(76, 175, 80, 0.1) !important;
+    color: #2E7D32 !important;
+    border: 1px solid rgba(76, 175, 80, 0.3) !important;
+}
+
+.yiji-item.ji,
+.tag-ji {
+    background: rgba(244, 67, 54, 0.1) !important;
+    color: #C62828 !important;
+    border: 1px solid rgba(244, 67, 54, 0.3) !important;
+}
+
+/* 日历页面 */
+.calendar-grid {
+    background: #FFFFFF !important;
+}
+
+.weekday {
+    color: #616161 !important;
+    background: transparent !important;
+}
+
+.day-cell {
+    background: #FFFFFF !important;
+    border: 1px solid #F0F0F0 !important;
+}
+
+.day-cell:hover {
+    background: #FAFAFA !important;
+    border-color: #D4577B !important;
+}
+
+.day-solar {
+    color: #212121 !important;
+}
+
+.day-lunar {
+    color: #757575 !important;
+}
+
+.day-cell.today {
+    background: linear-gradient(135deg, rgba(212, 87, 123, 0.1), rgba(232, 153, 179, 0.1)) !important;
+    border-color: #D4577B !important;
+}
+
+.day-cell.selected {
+    background: linear-gradient(135deg, #D4577B, #E899B3) !important;
+}
+
+.day-cell.selected .day-solar,
+.day-cell.selected .day-lunar {
+    color: #FFFFFF !important;
+}
+
+/* 生活指南页面 */
+.lifestyle-card .card-header {
+    background: transparent !important;
+    border-bottom: 1px solid #F0F0F0 !important;
+}
+
+.suggestion-item {
+    background: #FAFAFA !important;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.suggestion-item .label {
+    color: #616161 !important;
+}
+
+.suggestion-item .value {
+    color: #212121 !important;
+    font-weight: 500 !important;
+}
+
+.color-palette .color-chip {
+    border: 2px solid #E0E0E0 !important;
+}
+
+.food-item {
+    background: #F5F5F5 !important;
+    color: #424242 !important;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* 智慧决策页面 */
+.decision-form {
+    background: transparent !important;
+}
+
+.option-card {
+    background: #FAFAFA !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.option-card:hover {
+    background: #FFFFFF !important;
+    border-color: #D4577B !important;
+}
+
+.option-score {
+    color: #D4577B !important;
+    font-weight: 600 !important;
+}
+
+.analysis-result {
+    background: #F5F5F5 !important;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* 知识学习页面 */
+.category-tabs {
+    background: #FAFAFA !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.tab-btn {
+    background: transparent !important;
+    color: #616161 !important;
+}
+
+.tab-btn.active {
+    background: #FFFFFF !important;
+    color: #D4577B !important;
+    border-bottom: 2px solid #D4577B !important;
+}
+
+.gua-item {
+    background: #FFFFFF !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.gua-item:hover {
+    background: #FAFAFA !important;
+    border-color: #D4577B !important;
+}
+
+.gua-symbol {
+    color: #424242 !important;
+}
+
+.gua-name {
+    color: #212121 !important;
+    font-weight: 600 !important;
+}
+
+.gua-attr {
+    color: #757575 !important;
+}
+
+.progress-bar {
+    background: #F5F5F5 !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #D4577B, #E899B3) !important;
+}
+
+/* ====================
+   链接修复
+   ==================== */
+a {
+    color: #D4577B !important;
+}
+
+a:hover {
+    color: #C14469 !important;
+}
+
+.btn-link {
+    background: transparent !important;
+    color: #D4577B !important;
+    border: none !important;
+}
+
+.btn-link:hover {
+    color: #C14469 !important;
+    text-decoration: underline !important;
+}
+
+/* ====================
+   图标和装饰元素
+   ==================== */
+.card-icon,
+.event-icon,
+.section-icon {
+    opacity: 0.9 !important;
+}
+
+.dot-green {
+    background: #4CAF50 !important;
+}
+
+.dot-red {
+    background: #F44336 !important;
+}
+
+/* ====================
+   页脚修复
+   ==================== */
+.app-footer {
+    background: #FAFAFA !important;
+    color: #616161 !important;
+    border-top: 1px solid #E0E0E0 !important;
+}
+
+.app-footer p {
+    color: #616161 !important;
+}
+
+/* ====================
+   覆盖任何残留的暗色样式
+   ==================== */
+*[style*="background: #1a"],
+*[style*="background: #0a"],
+*[style*="background-color: #1a"],
+*[style*="background-color: #0a"],
+*[style*="color: #fff"],
+*[style*="color: white"] {
+    background: #FFFFFF !important;
+    color: #212121 !important;
+}
+
+/* ====================
+   确保可读性的最终保障
+   ==================== */
+* {
+    /* 确保没有元素使用过暗的背景 */
+    background-color: var(--bg-color, transparent) !important;
+}
+
+*:not(.btn-primary):not(.day-cell.selected) {
+    /* 确保文字不会是白色（除了主按钮和选中日期） */
+    color: var(--text-color, inherit) !important;
+}
+
+/* 移除任何可能的深色滤镜 */
+body,
+.app-main,
+.container {
+    filter: none !important;
+}
+
+/* ====================
+   响应式适配
+   ==================== */
+@media (max-width: 768px) {
+    body {
+        background: #FFFFFF !important;
+    }
+
+    .card {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+    }
+}

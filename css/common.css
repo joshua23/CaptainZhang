@@ -359,6 +359,28 @@ input:focus, textarea:focus, select:focus {
     }
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
 /* 加载动画 */
 .loading {
     display: inline-block;
@@ -406,22 +428,7 @@ input:focus, textarea:focus, select:focus {
     }
 }
 
-/* 暗色模式支持 */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-light: #1a1a1a;
-        --color-white: #2a2a2a;
-    }
-
-    body {
-        background: #0a0a0a;
-        color: #e0e0e0;
-    }
-
-    .card {
-        background: rgba(42, 42, 42, 0.95);
-    }
-}
+/* 项目只使用浅色主题，不支持暗色模式 */
 
 /* 打印样式 */
 @media print {

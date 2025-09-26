@@ -85,15 +85,7 @@
     --gradient-aurora: linear-gradient(135deg, rgba(106, 76, 147, 0.2), rgba(212, 175, 55, 0.1));
 }
 
-/* ====================
-   暗色模式优化
-   ==================== */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-primary: #0A0E1A;
-        --text-primary: #F7F7F7;
-    }
-}
+/* 项目只使用浅色主题 */
 
 /* ====================
    亮色模式（可选）

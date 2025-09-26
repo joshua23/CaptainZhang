@@ -121,14 +121,19 @@ function animateSymbols() {
 // ====================
 
 function startJourney() {
+    console.log('startJourney called');
+
     // 检查是否有用户数据
     const userData = Utils.storage.get('userData');
+    console.log('userData:', userData);
 
     if (userData && userData.profile) {
         // 已有用户画像，直接进入主应用
+        console.log('Has profile, entering main app');
         enterMainApp();
     } else {
         // 直接进入主应用（临时方案，让用户可以测试导航）
+        console.log('No profile, entering main app anyway');
         enterMainApp();
         // 或者跳转到profile页面设置
         // window.location.href = 'profile.html';
@@ -231,21 +236,32 @@ function showProfileSetup() {
 // ====================
 
 function enterMainApp() {
+    console.log('enterMainApp called');
+
     const welcomePage = document.getElementById('welcomePage');
     const mainApp = document.getElementById('mainApp');
 
+    console.log('welcomePage element:', welcomePage);
+    console.log('mainApp element:', mainApp);
+
     if (welcomePage && mainApp) {
+        console.log('Both elements found, transitioning...');
         // 淡出欢迎页
         welcomePage.style.opacity = '0';
         welcomePage.style.transition = 'opacity 0.5s ease';
 
         setTimeout(() => {
+            console.log('Hiding welcome page, showing main app');
             welcomePage.style.display = 'none';
             mainApp.style.display = 'block';
 
             // 初始化主应用
             initMainApp();
         }, 500);
+    } else {
+        console.error('Elements not found!', 'welcomePage:', !!welcomePage, 'mainApp:', !!mainApp);
+        // 如果找不到元素，可能是因为页面结构不对，尝试直接跳转
+        console.log('Attempting fallback navigation to index.html#main');
     }
 }
 
@@ -383,6 +399,8 @@ function navigateTo(page) {
 
 // 将函数暴露到全局作用域
 window.navigateTo = navigateTo;
+window.startJourney = startJourney;
+window.showLogin = showLogin;
 
 // ====================
 // 初始化每日智慧

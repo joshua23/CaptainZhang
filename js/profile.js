@@ -255,19 +255,25 @@ function showWuXingChart(wuxing) {
     const names = { metal: '金', wood: '木', water: '水', fire: '火', earth: '土' };
 
     elements.forEach(element => {
-        const fill = document.querySelector(`.element-fill[data-element="${element}"]`);
-        const value = document.querySelector(`.element-fill[data-element="${element}"]`)
-            ?.parentElement?.parentElement?.querySelector('.element-value');
+        // 查找对应的五行项容器
+        const wuxingItems = document.querySelectorAll('.wuxing-item');
 
-        if (fill) {
-            setTimeout(() => {
-                fill.style.width = `${wuxing[element]}%`;
-            }, 100);
-        }
+        wuxingItems.forEach(item => {
+            const fill = item.querySelector(`.element-fill[data-element="${element}"]`);
+            if (fill) {
+                // 设置进度条宽度
+                const percentage = wuxing[element] || 0;
+                setTimeout(() => {
+                    fill.style.width = `${percentage}%`;
+                }, 100);
 
-        if (value) {
-            value.textContent = `${wuxing[element]}%`;
-        }
+                // 更新百分比显示
+                const valueElement = item.querySelector('.element-value');
+                if (valueElement) {
+                    valueElement.textContent = `${percentage}%`;
+                }
+            }
+        });
     });
 }
 
