@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="知识学习 - 张大师智慧生活导航系统">
+    <title>知识学习 - 张大师</title>
+
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/knowledge.css">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">张大师</span>
+                </a>
+                <span class="logo-subtitle">知识学习</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="window.location.href='index.html'">
+                    <span style="margin-right: 4px;">←</span> 返回首页
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="app-main">
+        <div class="container">
+            <!-- 知识分类 -->
+            <section class="knowledge-categories card">
+                <h2 class="section-title">传统文化宝库</h2>
+                <div class="category-tabs">
+                    <button class="tab-btn active" onclick="switchCategory('yijing')">易经八卦</button>
+                    <button class="tab-btn" onclick="switchCategory('wuxing')">五行学说</button>
+                    <button class="tab-btn" onclick="switchCategory('fengshui')">风水堪舆</button>
+                    <button class="tab-btn" onclick="switchCategory('zhongyi')">中医养生</button>
+                    <button class="tab-btn" onclick="switchCategory('minsu')">民俗文化</button>
+                </div>
+            </section>
+
+            <!-- 易经八卦内容 -->
+            <section id="yijing" class="knowledge-content card">
+                <h3 class="content-title">易经八卦基础</h3>
+
+                <!-- 八卦图解 -->
+                <div class="bagua-diagram">
+                    <div class="bagua-grid">
+                        <div class="gua-item" onclick="showGuaDetail('qian')">
+                            <div class="gua-symbol">☰</div>
+                            <div class="gua-name">乾</div>
+                            <div class="gua-attr">天、父、西北</div>
+                        </div>
+                        <div class="gua-item" onclick="showGuaDetail('kun')">
+                            <div class="gua-symbol">☷</div>
+                            <div class="gua-name">坤</div>
+                            <div class="gua-attr">地、母、西南</div>
+                        </div>
+                        <div class="gua-item" onclick="showGuaDetail('zhen')">
+                            <div class="gua-symbol">☳</div>
+                            <div class="gua-name">震</div>
+                            <div class="gua-attr">雷、长男、东</div>
+                        </div>
+                        <div class="gua-item" onclick="showGuaDetail('xun')">
+                            <div class="gua-symbol">☴</div>
+                            <div class="gua-name">巽</div>
+                            <div class="gua-attr">风、长女、东南</div>
+                        </div>
+                        <div class="gua-item" onclick="showGuaDetail('kan')">
+                            <div class="gua-symbol">☵</div>
+                            <div class="gua-name">坎</div>
+                            <div class="gua-attr">水、中男、北</div>
+                        </div>
+                        <div class="gua-item" onclick="showGuaDetail('li')">
+                            <div class="gua-symbol">☲</div>
+                            <div class="gua-name">离</div>
+                            <div class="gua-attr">火、中女、南</div>
+                        </div>
+                        <div class="gua-item" onclick="showGuaDetail('gen')">
+                            <div class="gua-symbol">☶</div>
+                            <div class="gua-name">艮</div>
+                            <div class="gua-attr">山、少男、东北</div>
+                        </div>
+                        <div class="gua-item" onclick="showGuaDetail('dui')">
+                            <div class="gua-symbol">☱</div>
+                            <div class="gua-name">兑</div>
+                            <div class="gua-attr">泽、少女、西</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 卦象详解 -->
+                <div class="gua-detail">
+                    <h4>乾卦详解</h4>
+                    <div class="detail-content">
+                        <p><strong>卦辞：</strong>元亨利贞</p>
+                        <p><strong>象征：</strong>天行健，君子以自强不息</p>
+                        <p><strong>含义：</strong>乾卦代表天，象征刚健、积极、向上的力量。在人事上代表君子、父亲、领导者。</p>
+                        <p><strong>应用：</strong>遇到乾卦，提示要发挥主动性，勇于担当，但也要防止刚愎自用。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 学习进度 -->
+            <section class="learning-progress card">
+                <h3 class="section-title">学习进度</h3>
+                <div class="progress-list">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-title">易经基础</span>
+                            <span class="progress-percent">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-title">五行学说</span>
+                            <span class="progress-percent">40%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-title">风水知识</span>
+                            <span class="progress-percent">25%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 今日一课 -->
+            <section class="daily-lesson card">
+                <h3 class="section-title">今日一课</h3>
+                <div class="lesson-content">
+                    <h4 class="lesson-title">天人合一的哲学智慧</h4>
+                    <div class="lesson-text">
+                        <p>天人合一是中国传统哲学的核心理念，强调人与自然的和谐统一。《易经》云："天地感而万物化生"，说明天地间的感应是万物生成变化的根本。</p>
+                        <p>在日常生活中，天人合一体现为：</p>
+                        <ul>
+                            <li>顺应自然规律，按时作息</li>
+                            <li>根据节气变化调整饮食起居</li>
+                            <li>保持内心平和，与环境和谐共处</li>
+                            <li>尊重自然，珍惜资源</li>
+                        </ul>
+                        <p>修身养性的关键在于认识并遵循这种天人相应的规律，从而达到身心健康、事业顺遂的理想状态。</p>
+                    </div>
+                    <div class="lesson-actions">
+                        <button class="btn btn-secondary" onclick="markAsRead()">标记已读</button>
+                        <button class="btn btn-primary" onclick="nextLesson()">下一课</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 问答互动 -->
+            <section class="qa-section card">
+                <h3 class="section-title">智慧问答</h3>
+                <div class="qa-container">
+                    <div class="qa-input">
+                        <input type="text" id="questionInput" class="question-input"
+                               placeholder="请输入您的问题，例如：什么是太极？">
+                        <button class="btn btn-primary" onclick="askQuestion()">提问</button>
+                    </div>
+                    <div class="recent-qa">
+                        <h4>热门问题</h4>
+                        <ul class="qa-list">
+                            <li onclick="showAnswer('q1')">
+                                <span class="q-icon">问：</span>
+                                五行相生相克的规律是什么？
+                            </li>
+                            <li onclick="showAnswer('q2')">
+                                <span class="q-icon">问：</span>
+                                如何根据生辰八字判断五行属性？
+                            </li>
+                            <li onclick="showAnswer('q3')">
+                                <span class="q-icon">问：</span>
+                                家居风水有哪些基本原则？
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 推荐阅读 -->
+            <section class="recommended-reading card">
+                <h3 class="section-title">推荐阅读</h3>
+                <div class="reading-list">
+                    <div class="reading-item">
+                        <div class="book-cover">📖</div>
+                        <div class="book-info">
+                            <h4 class="book-title">《易经》导读</h4>
+                            <p class="book-desc">深入浅出解读易经六十四卦的智慧</p>
+                            <button class="btn-link" onclick="startReading('yijing')">开始阅读</button>
+                        </div>
+                    </div>
+                    <div class="reading-item">
+                        <div class="book-cover">📚</div>
+                        <div class="book-info">
+                            <h4 class="book-title">《黄帝内经》养生篇</h4>
+                            <p class="book-desc">传统中医养生智慧的现代解读</p>
+                            <button class="btn-link" onclick="startReading('huangdi')">开始阅读</button>
+                        </div>
+                    </div>
+                    <div class="reading-item">
+                        <div class="book-cover">📕</div>
+                        <div class="book-info">
+                            <h4 class="book-title">风水入门指南</h4>
+                            <p class="book-desc">居家风水布局的实用技巧</p>
+                            <button class="btn-link" onclick="startReading('fengshui')">开始阅读</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="js/common.js"></script>
+    <script src="js/knowledge.js"></script>
+</body>
+</html>

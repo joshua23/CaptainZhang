@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="智慧决策 - 张大师智慧生活导航系统">
+    <title>智慧决策 - 张大师</title>
+
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/decision.css">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">张大师</span>
+                </a>
+                <span class="logo-subtitle">智慧决策</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="window.location.href='index.html'">
+                    <span style="margin-right: 4px;">←</span> 返回首页
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="app-main">
+        <div class="container">
+            <!-- 决策类型选择 -->
+            <section class="decision-types card">
+                <h2 class="section-title">选择决策类型</h2>
+                <div class="type-grid">
+                    <div class="type-card" onclick="selectDecisionType('career')">
+                        <div class="type-icon">💼</div>
+                        <h3 class="type-title">事业发展</h3>
+                        <p class="type-desc">求职、升迁、创业时机</p>
+                    </div>
+                    <div class="type-card" onclick="selectDecisionType('marriage')">
+                        <div class="type-icon">💑</div>
+                        <h3 class="type-title">婚姻大事</h3>
+                        <p class="type-desc">求婚、结婚、喜事择日</p>
+                    </div>
+                    <div class="type-card" onclick="selectDecisionType('property')">
+                        <div class="type-icon">🏠</div>
+                        <h3 class="type-title">置业安居</h3>
+                        <p class="type-desc">买房、装修、搬迁入宅</p>
+                    </div>
+                    <div class="type-card" onclick="selectDecisionType('investment')">
+                        <div class="type-icon">💰</div>
+                        <h3 class="type-title">投资理财</h3>
+                        <p class="type-desc">投资时机、合作洽谈</p>
+                    </div>
+                    <div class="type-card" onclick="selectDecisionType('health')">
+                        <div class="type-icon">🏥</div>
+                        <h3 class="type-title">健康医疗</h3>
+                        <p class="type-desc">手术、调理、就医择日</p>
+                    </div>
+                    <div class="type-card" onclick="selectDecisionType('study')">
+                        <div class="type-icon">📚</div>
+                        <h3 class="type-title">学业考试</h3>
+                        <p class="type-desc">考试、升学、进修规划</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 智能问答 -->
+            <section class="smart-qa card">
+                <h2 class="section-title">智能决策助手</h2>
+                <div class="qa-container">
+                    <div class="input-area">
+                        <textarea id="questionInput" class="question-input"
+                                  placeholder="请描述您的决策需求，例如：我计划下个月换工作，请问什么时间比较合适？"></textarea>
+                        <button class="btn btn-primary" onclick="askQuestion()">
+                            <span>获取建议</span>
+                        </button>
+                    </div>
+
+                    <div id="answerArea" class="answer-area" style="display: none;">
+                        <h3 class="answer-title">智慧建议</h3>
+                        <div id="answerContent" class="answer-content">
+                            <!-- 答案将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 决策分析结果 -->
+            <section id="analysisResult" class="analysis-result card" style="display: none;">
+                <h2 class="section-title">综合分析结果</h2>
+
+                <!-- 五行分析 -->
+                <div class="analysis-section">
+                    <h3 class="subsection-title">五行相生相克分析</h3>
+                    <div class="wuxing-chart">
+                        <div class="wuxing-item wood">
+                            <span class="element">木</span>
+                            <span class="status">旺</span>
+                        </div>
+                        <div class="wuxing-item fire">
+                            <span class="element">火</span>
+                            <span class="status">相</span>
+                        </div>
+                        <div class="wuxing-item earth">
+                            <span class="element">土</span>
+                            <span class="status">平</span>
+                        </div>
+                        <div class="wuxing-item metal">
+                            <span class="element">金</span>
+                            <span class="status">休</span>
+                        </div>
+                        <div class="wuxing-item water">
+                            <span class="element">水</span>
+                            <span class="status">囚</span>
+                        </div>
+                    </div>
+                    <p class="analysis-desc">当前五行木旺，适合开展新项目，利于生发成长</p>
+                </div>
+
+                <!-- 吉日推荐 -->
+                <div class="analysis-section">
+                    <h3 class="subsection-title">吉日推荐</h3>
+                    <div class="dates-list">
+                        <div class="date-item auspicious">
+                            <div class="date-header">
+                                <span class="date">9月28日</span>
+                                <span class="tag tag-gold">大吉</span>
+                            </div>
+                            <div class="date-detail">
+                                <p>农历八月廿八，甲辰日</p>
+                                <p>宜：开业、签约、求财</p>
+                            </div>
+                        </div>
+                        <div class="date-item good">
+                            <div class="date-header">
+                                <span class="date">10月3日</span>
+                                <span class="tag tag-lucky">吉</span>
+                            </div>
+                            <div class="date-detail">
+                                <p>农历九月初三，己酉日</p>
+                                <p>宜：会谈、面试、洽商</p>
+                            </div>
+                        </div>
+                        <div class="date-item normal">
+                            <div class="date-header">
+                                <span class="date">10月8日</span>
+                                <span class="tag">平</span>
+                            </div>
+                            <div class="date-detail">
+                                <p>农历九月初八，甲寅日</p>
+                                <p>宜：学习、培训、储备</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 策略建议 -->
+                <div class="analysis-section">
+                    <h3 class="subsection-title">行动策略</h3>
+                    <div class="strategy-list">
+                        <div class="strategy-item">
+                            <span class="strategy-icon">1️⃣</span>
+                            <div class="strategy-content">
+                                <h4>短期建议（1-7天）</h4>
+                                <p>整理现有资源，明确目标方向，做好充分准备</p>
+                            </div>
+                        </div>
+                        <div class="strategy-item">
+                            <span class="strategy-icon">2️⃣</span>
+                            <div class="strategy-content">
+                                <h4>中期规划（1-3月）</h4>
+                                <p>把握9月底的黄金时机，主动出击，积极推进</p>
+                            </div>
+                        </div>
+                        <div class="strategy-item">
+                            <span class="strategy-icon">3️⃣</span>
+                            <div class="strategy-content">
+                                <h4>长期展望（3-12月）</h4>
+                                <p>稳扎稳打，循序渐进，年底将有重大突破</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 注意事项 -->
+                <div class="analysis-section">
+                    <h3 class="subsection-title">风险提示</h3>
+                    <div class="warning-box">
+                        <p>⚠️ 避免在农历月末做重大决定</p>
+                        <p>⚠️ 注意人际关系的维护，防小人</p>
+                        <p>⚠️ 财务决策需谨慎，避免冲动投资</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 历史记录 -->
+            <section class="history card">
+                <h3 class="section-title">决策历史</h3>
+                <div class="history-list">
+                    <div class="history-item">
+                        <div class="history-date">2025-09-20</div>
+                        <div class="history-content">
+                            <p class="history-type">事业发展</p>
+                            <p class="history-desc">关于跳槽时机的咨询</p>
+                        </div>
+                        <button class="btn-link" onclick="viewHistory(1)">查看</button>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-date">2025-09-15</div>
+                        <div class="history-content">
+                            <p class="history-type">投资理财</p>
+                            <p class="history-desc">股票投资时机分析</p>
+                        </div>
+                        <button class="btn-link" onclick="viewHistory(2)">查看</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="js/common.js"></script>
+    <script src="js/decision.js"></script>
+</body>
+</html>

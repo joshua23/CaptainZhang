@@ -1,0 +1,550 @@
+/* ================================
+   首页样式 - 张大师智慧生活导航系统
+   ================================ */
+
+/* ====================
+   欢迎页面样式
+   ==================== */
+
+.welcome-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a0033 50%, #0a0e27 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+    z-index: 10;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* 大师形象区域（复用原有样式） */
+.master-silhouette {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.master-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.master-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: fadeInOut 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(139, 0, 255, 0.5));
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 光环效果 */
+.mystic-aura {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.aura-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid;
+    border-image: linear-gradient(135deg, #8B00FF, #4B0082) 1;
+}
+
+.aura-ring-1 {
+    width: 280px;
+    height: 380px;
+    animation: pulseRing 3s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.aura-ring-2 {
+    width: 320px;
+    height: 420px;
+    animation: pulseRing 3s ease-in-out infinite 0.5s;
+    opacity: 0.2;
+}
+
+.aura-ring-3 {
+    width: 360px;
+    height: 460px;
+    animation: pulseRing 3s ease-in-out infinite 1s;
+    opacity: 0.1;
+}
+
+@keyframes pulseRing {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.3;
+    }
+}
+
+/* 漂浮符号 */
+.floating-symbols {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.symbol {
+    position: absolute;
+    font-size: 28px;
+    color: #8B00FF;
+    font-family: 'KaiTi', '楷体', serif;
+    animation: floatSymbol 8s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(139, 0, 255, 0.5);
+}
+
+.symbol-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.symbol-2 {
+    top: 15%;
+    right: 10%;
+    animation-delay: 1.6s;
+}
+
+.symbol-3 {
+    bottom: 40%;
+    left: 5%;
+    animation-delay: 3.2s;
+}
+
+.symbol-4 {
+    bottom: 30%;
+    right: 5%;
+    animation-delay: 4.8s;
+}
+
+.symbol-5 {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 6.4s;
+}
+
+@keyframes floatSymbol {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    20%, 80% {
+        opacity: 0.6;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+}
+
+/* 标题区域 */
+.title-container {
+    text-align: center;
+    color: #fff;
+    animation: titleFadeIn 2s ease-out;
+}
+
+/* Logo样式 */
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    animation: logoFloat 6s ease-in-out infinite;
+}
+
+.welcome-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(139, 0, 255, 0.6));
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.welcome-logo:hover {
+    transform: scale(1.1);
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.master-title {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    margin-bottom: var(--spacing-sm);
+    animation: titleGlow 3s ease-in-out infinite;
+    font-family: var(--font-decorative);
+}
+
+@keyframes titleGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+.master-subtitle {
+    font-size: 1.25rem;
+    color: #B8B8FF;
+    opacity: 0.9;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.master-desc {
+    font-size: 1rem;
+    color: #B8B8FF;
+    opacity: 0.8;
+}
+
+/* 操作按钮区域 */
+.action-container {
+    text-align: center;
+    animation: fadeIn 2.5s ease-out;
+}
+
+.action-container .btn-primary {
+    font-size: 1.125rem;
+    padding: var(--spacing-md) var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.login-link {
+    color: #B8B8FF;
+    font-size: 0.875rem;
+}
+
+.login-link a {
+    color: var(--color-gold);
+}
+
+/* 粒子背景 */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #8B00FF;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 10s linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) translateX(0);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) translateX(100px);
+    }
+}
+
+/* ====================
+   主应用样式
+   ==================== */
+
+.main-app {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f5f5, #e8e8f0);
+    display: flex;
+    flex-direction: column;
+}
+
+.app-main {
+    flex: 1;
+    padding: var(--spacing-xl) 0;
+}
+
+/* 今日概览卡片 */
+.today-overview {
+    margin-bottom: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(139, 0, 255, 0.05), rgba(255, 215, 0, 0.05));
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-gold));
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-xl);
+}
+
+.date-display {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+}
+
+.solar-date {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.lunar-date {
+    font-size: 1.125rem;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.solar-term {
+    font-size: 1rem;
+    color: var(--color-gold);
+    font-weight: 500;
+}
+
+.fortune-preview {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fortune-item {
+    text-align: center;
+}
+
+.fortune-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-xs);
+}
+
+.fortune-stars {
+    font-size: 1.25rem;
+    color: var(--color-gold);
+}
+
+.fortune-value {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+.color-blue {
+    color: var(--color-water);
+}
+
+/* 功能导航网格 */
+.nav-grid {
+    margin-bottom: var(--spacing-xl);
+}
+
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+/* 每日智慧 */
+.daily-wisdom {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+}
+
+.daily-wisdom .section-title {
+    color: var(--color-white);
+}
+
+.wisdom-quote {
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.wisdom-quote p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    font-family: var(--font-serif);
+    margin-bottom: var(--spacing-md);
+}
+
+.wisdom-quote cite {
+    font-style: normal;
+    opacity: 0.8;
+    font-size: 0.875rem;
+}
+
+/* 底部信息 */
+.app-footer {
+    background: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--spacing-lg);
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* ====================
+   响应式设计
+   ==================== */
+
+@media (max-width: 768px) {
+    .master-silhouette {
+        width: 300px;
+        height: 300px;
+    }
+
+    .master-title {
+        font-size: 2rem;
+    }
+
+    .master-subtitle {
+        font-size: 1rem;
+    }
+
+    .master-desc {
+        font-size: 0.875rem;
+    }
+
+    .overview-content {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fortune-preview {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .aura-ring-1 {
+        width: 220px;
+        height: 280px;
+    }
+
+    .aura-ring-2 {
+        width: 250px;
+        height: 310px;
+    }
+
+    .aura-ring-3 {
+        width: 280px;
+        height: 340px;
+    }
+}
+
+@media (max-width: 480px) {
+    .master-silhouette {
+        width: 250px;
+        height: 250px;
+    }
+
+    .nav-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .symbol {
+        font-size: 20px;
+    }
+
+    .wisdom-quote p {
+        font-size: 1rem;
+    }
+}

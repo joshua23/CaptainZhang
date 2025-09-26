@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="生活指南 - 张大师智慧生活导航系统">
+    <title>生活指南 - 张大师</title>
+
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/lifestyle.css">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">张大师</span>
+                </a>
+                <span class="logo-subtitle">生活指南</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="window.location.href='index.html'">
+                    <span style="margin-right: 4px;">←</span> 返回首页
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="app-main">
+        <div class="container">
+            <!-- 今日概览 -->
+            <section class="today-overview card">
+                <h2 class="section-title">今日生活建议</h2>
+                <div class="overview-info">
+                    <span id="currentDate" class="date-info">2025年9月26日 星期五</span>
+                    <span id="lunarDate" class="lunar-info">农历八月廿六 秋分</span>
+                </div>
+            </section>
+
+            <!-- 衣 - 服饰建议 -->
+            <section class="lifestyle-card card clothing">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <span class="card-icon">👔</span>
+                        衣 · 服饰搭配
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="suggestion-item">
+                        <span class="label">幸运色彩：</span>
+                        <div class="color-palette">
+                            <span class="color-chip" style="background: #4169E1;" title="蓝色"></span>
+                            <span class="color-chip" style="background: #FFD700;" title="金色"></span>
+                            <span class="color-chip" style="background: #FFFFFF; border: 1px solid #ddd;" title="白色"></span>
+                        </div>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="label">材质建议：</span>
+                        <span class="value">棉质、丝绸类透气材质</span>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="label">风格推荐：</span>
+                        <span class="value">简约大方，避免过于繁复的装饰</span>
+                    </div>
+                    <div class="tips">
+                        <p class="tip">💡 今日五行属水，宜穿蓝色系服饰增强运势</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 食 - 饮食建议 -->
+            <section class="lifestyle-card card food">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <span class="card-icon">🍜</span>
+                        食 · 饮食养生
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="suggestion-item">
+                        <span class="label">节气食谱：</span>
+                        <span class="value">秋分宜润燥，推荐银耳莲子汤、雪梨百合羹</span>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="label">五行食材：</span>
+                        <div class="food-list">
+                            <span class="food-item">黑豆</span>
+                            <span class="food-item">黑芝麻</span>
+                            <span class="food-item">核桃</span>
+                            <span class="food-item">海带</span>
+                        </div>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="label">忌口提醒：</span>
+                        <span class="value">避免辛辣刺激，少食油腻</span>
+                    </div>
+                    <div class="meal-timing">
+                        <h4>最佳用餐时辰</h4>
+                        <div class="timing-list">
+                            <div class="timing-item">
+                                <span class="time">07:00-09:00</span>
+                                <span class="meal">早餐：养胃健脾</span>
+                            </div>
+                            <div class="timing-item">
+                                <span class="time">11:30-13:00</span>
+                                <span class="meal">午餐：营养均衡</span>
+                            </div>
+                            <div class="timing-item">
+                                <span class="time">18:00-19:00</span>
+                                <span class="meal">晚餐：清淡少量</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 住 - 居住环境 -->
+            <section class="lifestyle-card card living">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <span class="card-icon">🏠</span>
+                        住 · 居住调理
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="suggestion-item">
+                        <span class="label">室内温度：</span>
+                        <span class="value">22-24°C为宜，避免过冷过热</span>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="label">空气流通：</span>
+                        <span class="value">早晚各通风15分钟，保持空气清新</span>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="label">风水布局：</span>
+                        <span class="value">东方摆放绿植，增强木气生机</span>
+                    </div>
+                    <div class="sleep-guide">
+                        <h4>作息建议</h4>
+                        <div class="schedule">
+                            <div class="schedule-item">
+                                <span class="icon">🌙</span>
+                                <span>22:30 准备就寝</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="icon">😴</span>
+                                <span>23:00 入睡养肝</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="icon">☀️</span>
+                                <span>06:30 自然醒来</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 行 - 出行建议 -->
+            <section class="lifestyle-card card travel">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <span class="card-icon">🚗</span>
+                        行 · 出行指导
+                    </h3>
+                </div>
+                <div class="card-content">
+                    <div class="suggestion-item">
+                        <span class="label">吉利方位：</span>
+                        <div class="direction-compass">
+                            <span class="direction lucky">东南 ✨</span>
+                            <span class="direction">正东</span>
+                            <span class="direction">正南</span>
+                            <span class="direction avoid">西北 ⚠️</span>
+                        </div>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="label">出行时辰：</span>
+                        <span class="value">辰时(7-9点)、午时(11-13点)最佳</span>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="label">交通建议：</span>
+                        <span class="value">宜乘坐公共交通，避免长途驾驶</span>
+                    </div>
+                    <div class="tips">
+                        <p class="tip">⚡ 今日冲属相：冲鼠，属鼠者宜谨慎出行</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 养生小贴士 -->
+            <section class="health-tips card">
+                <h3 class="section-title">今日养生要点</h3>
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <span class="tip-icon">🧘</span>
+                        <div class="tip-content">
+                            <h4>运动建议</h4>
+                            <p>适宜太极、瑜伽等舒缓运动，避免剧烈运动</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">💆</span>
+                        <div class="tip-content">
+                            <h4>穴位保健</h4>
+                            <p>按摩足三里、太溪穴，调理脾胃肾气</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">🍵</span>
+                        <div class="tip-content">
+                            <h4>茶饮推荐</h4>
+                            <p>菊花枸杞茶清肝明目，适合秋季饮用</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-icon">🌿</span>
+                        <div class="tip-content">
+                            <h4>情志调养</h4>
+                            <p>保持心境平和，避免悲秋情绪</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="js/common.js"></script>
+    <script src="js/lifestyle.js"></script>
+</body>
+</html>

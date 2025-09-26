@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="天人合一：融合传统东方智慧与现代AI技术的智慧生活导航系统 - 张大师CaptainZhang">
+    <meta name="keywords" content="张大师,黄历,择吉,八字,五行,运势,风水,养生">
+    <title>天人合一 · 张大师 - 智慧生活导航系统</title>
+
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- 欢迎页面 -->
+    <div id="welcomePage" class="welcome-page">
+        <div class="welcome-content">
+            <!-- 大师形象展示 -->
+            <div class="master-silhouette">
+                <div class="master-image-container">
+                    <img src="master.png" alt="张大师" class="master-image">
+                    <div class="mystic-aura">
+                        <div class="aura-ring aura-ring-1"></div>
+                        <div class="aura-ring aura-ring-2"></div>
+                        <div class="aura-ring aura-ring-3"></div>
+                    </div>
+                </div>
+                <div class="floating-symbols">
+                    <span class="symbol symbol-1">☯</span>
+                    <span class="symbol symbol-2">卦</span>
+                    <span class="symbol symbol-3">乾</span>
+                    <span class="symbol symbol-4">坤</span>
+                    <span class="symbol symbol-5">道</span>
+                </div>
+            </div>
+
+            <!-- Logo和标题区域 -->
+            <div class="title-container">
+                <div class="logo-wrapper">
+                    <img src="logo.png" alt="张大师Logo" class="welcome-logo">
+                </div>
+                <h1 class="master-title">张大师</h1>
+                <p class="master-subtitle">天人合一 · 道法自然</p>
+                <p class="master-desc">让千年智慧指引现代生活</p>
+            </div>
+
+            <!-- 开始按钮 -->
+            <div class="action-container">
+                <button class="btn-primary btn-glow" onclick="startJourney()">开启智慧之旅</button>
+                <p class="login-link">已有画像？<a href="#" onclick="showLogin()">直接进入</a></p>
+            </div>
+        </div>
+
+        <!-- 粒子背景 -->
+        <div class="particles"></div>
+    </div>
+
+    <!-- 主应用容器 -->
+    <div id="mainApp" class="main-app" style="display: none;">
+        <!-- 导航中心页面 -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <span class="logo-text">张大师</span>
+                    <span class="logo-subtitle">智慧生活导航</span>
+                </div>
+                <div class="header-info">
+                    <span id="currentDate" class="date-info"></span>
+                    <span id="currentTime" class="time-info"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 功能导航区 -->
+        <main class="app-main">
+            <div class="container">
+                <!-- 今日概览卡片 -->
+                <section class="today-overview card">
+                    <h2 class="section-title">今日概览</h2>
+                    <div class="overview-content">
+                        <div class="date-display">
+                            <div class="solar-date" id="solarDate"></div>
+                            <div class="lunar-date" id="lunarDate"></div>
+                            <div class="solar-term" id="solarTerm"></div>
+                        </div>
+                        <div class="fortune-preview">
+                            <div class="fortune-item">
+                                <span class="fortune-label">今日运势</span>
+                                <div class="fortune-stars">★★★★☆</div>
+                            </div>
+                            <div class="fortune-item">
+                                <span class="fortune-label">幸运方位</span>
+                                <span class="fortune-value">东南</span>
+                            </div>
+                            <div class="fortune-item">
+                                <span class="fortune-label">幸运色</span>
+                                <span class="fortune-value color-blue">蓝色</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 功能导航网格 -->
+                <section class="nav-grid">
+                    <h2 class="section-title">核心功能</h2>
+                    <div class="nav-cards">
+                        <!-- 用户画像设置 -->
+                        <div class="nav-card" onclick="navigateTo('profile-setup')">
+                            <div class="card-icon">👤</div>
+                            <h3 class="card-title">用户画像</h3>
+                            <p class="card-desc">设置生辰八字，建立专属画像</p>
+                        </div>
+
+                        <!-- 今日运势 -->
+                        <div class="nav-card" onclick="navigateTo('today-fortune')">
+                            <div class="card-icon">🔮</div>
+                            <h3 class="card-title">今日运势</h3>
+                            <p class="card-desc">查看个人运势与黄历宜忌</p>
+                        </div>
+
+                        <!-- 择吉日历 -->
+                        <div class="nav-card" onclick="navigateTo('calendar')">
+                            <div class="card-icon">📅</div>
+                            <h3 class="card-title">择吉日历</h3>
+                            <p class="card-desc">选择黄道吉日，规划重要事项</p>
+                        </div>
+
+                        <!-- 生活指南 -->
+                        <div class="nav-card" onclick="navigateTo('lifestyle')">
+                            <div class="card-icon">🍃</div>
+                            <h3 class="card-title">生活指南</h3>
+                            <p class="card-desc">衣食住行全方位生活建议</p>
+                        </div>
+
+                        <!-- 智慧决策 -->
+                        <div class="nav-card" onclick="navigateTo('decision')">
+                            <div class="card-icon">🎯</div>
+                            <h3 class="card-title">智慧决策</h3>
+                            <p class="card-desc">重大事项分析与建议</p>
+                        </div>
+
+                        <!-- 知识学习 -->
+                        <div class="nav-card" onclick="navigateTo('knowledge')">
+                            <div class="card-icon">📚</div>
+                            <h3 class="card-title">知识学习</h3>
+                            <p class="card-desc">传统文化与易经智慧</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 每日一句 -->
+                <section class="daily-wisdom card">
+                    <h2 class="section-title">每日智慧</h2>
+                    <blockquote class="wisdom-quote">
+                        <p id="dailyQuote">天行健，君子以自强不息；地势坤，君子以厚德载物。</p>
+                        <cite>—— 《易经》</cite>
+                    </blockquote>
+                </section>
+            </div>
+        </main>
+
+        <!-- 底部信息 -->
+        <footer class="app-footer">
+            <p>© 2025 张大师 - 智慧生活导航系统</p>
+        </footer>
+    </div>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="js/common.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

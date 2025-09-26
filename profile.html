@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="用户画像设置 - 张大师智慧生活导航系统">
+    <title>用户画像 - 张大师</title>
+
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">张大师</span>
+                </a>
+                <span class="logo-subtitle">用户画像</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="window.location.href='index.html'">
+                    <span style="margin-right: 4px;">←</span> 返回首页
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="app-main">
+        <div class="container">
+            <!-- 用户信息卡片 -->
+            <section class="profile-card card">
+                <h2 class="section-title">基础信息</h2>
+                <form id="profileForm" class="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">姓名 *</label>
+                            <input type="text" name="name" class="form-input" placeholder="请输入您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">性别 *</label>
+                            <select name="gender" class="form-select" required>
+                                <option value="">请选择</option>
+                                <option value="male">男</option>
+                                <option value="female">女</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">出生日期 *</label>
+                            <input type="date" name="birthDate" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">出生时辰 *</label>
+                            <select name="birthTime" class="form-select" required>
+                                <option value="">请选择</option>
+                                <option value="子">子时 (23:00-01:00)</option>
+                                <option value="丑">丑时 (01:00-03:00)</option>
+                                <option value="寅">寅时 (03:00-05:00)</option>
+                                <option value="卯">卯时 (05:00-07:00)</option>
+                                <option value="辰">辰时 (07:00-09:00)</option>
+                                <option value="巳">巳时 (09:00-11:00)</option>
+                                <option value="午">午时 (11:00-13:00)</option>
+                                <option value="未">未时 (13:00-15:00)</option>
+                                <option value="申">申时 (15:00-17:00)</option>
+                                <option value="酉">酉时 (17:00-19:00)</option>
+                                <option value="戌">戌时 (19:00-21:00)</option>
+                                <option value="亥">亥时 (21:00-23:00)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">出生地点</label>
+                        <input type="text" name="birthPlace" class="form-input" placeholder="省/市/区（用于精确计算）">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">职业</label>
+                        <select name="career" class="form-select">
+                            <option value="">请选择</option>
+                            <option value="business">商业/贸易</option>
+                            <option value="tech">科技/互联网</option>
+                            <option value="finance">金融/投资</option>
+                            <option value="education">教育/培训</option>
+                            <option value="medical">医疗/健康</option>
+                            <option value="art">艺术/设计</option>
+                            <option value="service">服务业</option>
+                            <option value="government">政府/公务员</option>
+                            <option value="freelance">自由职业</option>
+                            <option value="student">学生</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">保存画像</button>
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">重置</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- 命理分析 -->
+            <section class="analysis-card card" id="analysisSection" style="display: none;">
+                <h2 class="section-title">命理分析</h2>
+
+                <div class="analysis-content">
+                    <!-- 八字信息 -->
+                    <div class="bazi-info">
+                        <h3>生辰八字</h3>
+                        <div class="bazi-display" id="baziDisplay">
+                            <span class="bazi-item">年柱: <strong id="yearPillar">-</strong></span>
+                            <span class="bazi-item">月柱: <strong id="monthPillar">-</strong></span>
+                            <span class="bazi-item">日柱: <strong id="dayPillar">-</strong></span>
+                            <span class="bazi-item">时柱: <strong id="hourPillar">-</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- 五行分析 -->
+                    <div class="wuxing-analysis">
+                        <h3>五行分析</h3>
+                        <div class="wuxing-chart" id="wuxingChart">
+                            <div class="wuxing-item">
+                                <span class="element-name">金</span>
+                                <div class="element-bar">
+                                    <div class="element-fill" data-element="metal" style="width: 0%"></div>
+                                </div>
+                                <span class="element-value">0%</span>
+                            </div>
+                            <div class="wuxing-item">
+                                <span class="element-name">木</span>
+                                <div class="element-bar">
+                                    <div class="element-fill" data-element="wood" style="width: 0%"></div>
+                                </div>
+                                <span class="element-value">0%</span>
+                            </div>
+                            <div class="wuxing-item">
+                                <span class="element-name">水</span>
+                                <div class="element-bar">
+                                    <div class="element-fill" data-element="water" style="width: 0%"></div>
+                                </div>
+                                <span class="element-value">0%</span>
+                            </div>
+                            <div class="wuxing-item">
+                                <span class="element-name">火</span>
+                                <div class="element-bar">
+                                    <div class="element-fill" data-element="fire" style="width: 0%"></div>
+                                </div>
+                                <span class="element-value">0%</span>
+                            </div>
+                            <div class="wuxing-item">
+                                <span class="element-name">土</span>
+                                <div class="element-bar">
+                                    <div class="element-fill" data-element="earth" style="width: 0%"></div>
+                                </div>
+                                <span class="element-value">0%</span>
+                            </div>
+                        </div>
+                        <div class="wuxing-summary" id="wuxingSummary">
+                            <!-- 五行分析总结将在这里显示 -->
+                        </div>
+                    </div>
+
+                    <!-- 性格特征 -->
+                    <div class="personality-traits">
+                        <h3>性格特征</h3>
+                        <div class="traits-list" id="traitsList">
+                            <!-- 性格特征将在这里显示 -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer class="app-footer">
+        <p>© 2025 张大师 - 智慧生活导航系统</p>
+    </footer>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="js/common.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

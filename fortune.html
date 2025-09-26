@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="今日运势 - 张大师智慧生活导航系统">
+    <title>今日运势 - 张大师</title>
+
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/fortune.css">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">张大师</span>
+                </a>
+                <span class="logo-subtitle">今日运势</span>
+            </div>
+            <div class="header-info">
+                <span id="currentDateTime"></span>
+                <span id="currentShiChen"></span>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="window.location.href='index.html'">
+                    <span style="margin-right: 4px;">←</span> 返回首页
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="app-main">
+        <div class="container">
+            <!-- 日期信息 -->
+            <section class="date-info-card card">
+                <div class="date-content">
+                    <div class="solar-info">
+                        <div class="solar-date" id="solarDate">2025年9月26日</div>
+                        <div class="weekday" id="weekday">星期五</div>
+                    </div>
+                    <div class="lunar-info">
+                        <div class="lunar-date" id="lunarDate">农历八月廿六</div>
+                        <div class="solar-term" id="solarTerm">秋分</div>
+                        <div class="ganzhi" id="ganzhiDate">甲辰年 癸酉月 壬午日</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 综合运势 -->
+            <section class="overall-fortune card">
+                <h2 class="section-title">今日运势</h2>
+                <div id="fortuneDashboard"></div>
+
+                <div class="lucky-elements">
+                    <div class="lucky-item">
+                        <span class="lucky-label">幸运色</span>
+                        <span class="lucky-value" id="luckyColor">蓝色</span>
+                    </div>
+                    <div class="lucky-item">
+                        <span class="lucky-label">幸运数字</span>
+                        <span class="lucky-value" id="luckyNumber">3, 8</span>
+                    </div>
+                    <div class="lucky-item">
+                        <span class="lucky-label">幸运方位</span>
+                        <span class="lucky-value" id="luckyDirection">东南</span>
+                    </div>
+                    <div class="lucky-item">
+                        <span class="lucky-label">贵人生肖</span>
+                        <span class="lucky-value" id="luckyZodiac">龙、鸡</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 黄历宜忌 -->
+            <section class="almanac-section">
+                <h2 class="section-title">黄历宜忌</h2>
+                <div id="almanacCard"></div>
+            </section>
+
+            <!-- 时辰吉凶 -->
+            <section class="shichen-section card">
+                <h2 class="section-title">时辰吉凶</h2>
+                <div class="shichen-grid">
+                    <div class="shichen-slot" data-time="子时">
+                        <div class="shichen-name">子时</div>
+                        <div class="shichen-period">23:00-01:00</div>
+                        <div class="shichen-status bad">凶</div>
+                    </div>
+                    <div class="shichen-slot" data-time="丑时">
+                        <div class="shichen-name">丑时</div>
+                        <div class="shichen-period">01:00-03:00</div>
+                        <div class="shichen-status normal">平</div>
+                    </div>
+                    <div class="shichen-slot" data-time="寅时">
+                        <div class="shichen-name">寅时</div>
+                        <div class="shichen-period">03:00-05:00</div>
+                        <div class="shichen-status good">吉</div>
+                    </div>
+                    <div class="shichen-slot" data-time="卯时">
+                        <div class="shichen-name">卯时</div>
+                        <div class="shichen-period">05:00-07:00</div>
+                        <div class="shichen-status good">吉</div>
+                    </div>
+                    <div class="shichen-slot" data-time="辰时">
+                        <div class="shichen-name">辰时</div>
+                        <div class="shichen-period">07:00-09:00</div>
+                        <div class="shichen-status excellent">大吉</div>
+                    </div>
+                    <div class="shichen-slot" data-time="巳时">
+                        <div class="shichen-name">巳时</div>
+                        <div class="shichen-period">09:00-11:00</div>
+                        <div class="shichen-status normal">平</div>
+                    </div>
+                    <div class="shichen-slot" data-time="午时">
+                        <div class="shichen-name">午时</div>
+                        <div class="shichen-period">11:00-13:00</div>
+                        <div class="shichen-status bad">凶</div>
+                    </div>
+                    <div class="shichen-slot" data-time="未时">
+                        <div class="shichen-name">未时</div>
+                        <div class="shichen-period">13:00-15:00</div>
+                        <div class="shichen-status normal">平</div>
+                    </div>
+                    <div class="shichen-slot" data-time="申时">
+                        <div class="shichen-name">申时</div>
+                        <div class="shichen-period">15:00-17:00</div>
+                        <div class="shichen-status good">吉</div>
+                    </div>
+                    <div class="shichen-slot" data-time="酉时">
+                        <div class="shichen-name">酉时</div>
+                        <div class="shichen-period">17:00-19:00</div>
+                        <div class="shichen-status excellent">大吉</div>
+                    </div>
+                    <div class="shichen-slot" data-time="戌时">
+                        <div class="shichen-name">戌时</div>
+                        <div class="shichen-period">19:00-21:00</div>
+                        <div class="shichen-status normal">平</div>
+                    </div>
+                    <div class="shichen-slot" data-time="亥时">
+                        <div class="shichen-name">亥时</div>
+                        <div class="shichen-period">21:00-23:00</div>
+                        <div class="shichen-status bad">凶</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 今日建议 -->
+            <section class="suggestions card">
+                <h2 class="section-title">智慧建议</h2>
+                <div class="suggestion-list">
+                    <div class="suggestion-item">
+                        <span class="suggestion-icon">🎯</span>
+                        <div class="suggestion-content">
+                            <h4>工作事业</h4>
+                            <p id="careerAdvice">今日宜谈判签约，上午9-11点为最佳时机，易获贵人相助。</p>
+                        </div>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="suggestion-icon">❤️</span>
+                        <div class="suggestion-content">
+                            <h4>感情关系</h4>
+                            <p id="loveAdvice">桃花运旺盛，单身者有机会遇到心仪对象，已婚者宜增进感情。</p>
+                        </div>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="suggestion-icon">💰</span>
+                        <div class="suggestion-content">
+                            <h4>财运投资</h4>
+                            <p id="wealthAdvice">偏财运较好，但不宜大额投资，小额尝试或有意外收获。</p>
+                        </div>
+                    </div>
+                    <div class="suggestion-item">
+                        <span class="suggestion-icon">🏥</span>
+                        <div class="suggestion-content">
+                            <h4>健康养生</h4>
+                            <p id="healthAdvice">注意呼吸系统健康，多喝温水，适合进行轻度运动。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer class="app-footer">
+        <p>© 2025 张大师 - 智慧生活导航系统</p>
+    </footer>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="js/common.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/fortune.js"></script>
+</body>
+</html>

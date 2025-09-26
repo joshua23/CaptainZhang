@@ -1,0 +1,191 @@
+/* ================================
+   用户画像页面样式 - 张大师智慧生活导航系统
+   ================================ */
+
+/* 表单布局 */
+.profile-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-light);
+}
+
+/* 分析卡片 */
+.analysis-card {
+    margin-top: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(139, 0, 255, 0.05), rgba(255, 215, 0, 0.05));
+}
+
+.analysis-content {
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+/* 八字信息 */
+.bazi-info h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.bazi-display {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.bazi-item {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.bazi-item strong {
+    display: block;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-top: var(--spacing-xs);
+    font-family: var(--font-decorative);
+}
+
+/* 五行分析 */
+.wuxing-analysis h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.wuxing-chart {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.wuxing-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.element-name {
+    width: 40px;
+    font-weight: 500;
+}
+
+.element-bar {
+    flex: 1;
+    height: 20px;
+    background: var(--color-light);
+    border-radius: var(--radius-sm);
+    margin: 0 var(--spacing-md);
+    overflow: hidden;
+}
+
+.element-fill {
+    height: 100%;
+    transition: width var(--transition-slow);
+    border-radius: var(--radius-sm);
+}
+
+.element-fill[data-element="metal"] {
+    background: linear-gradient(90deg, var(--color-metal), #C0C0C0);
+}
+
+.element-fill[data-element="wood"] {
+    background: linear-gradient(90deg, var(--color-wood), #00A86B);
+}
+
+.element-fill[data-element="water"] {
+    background: linear-gradient(90deg, var(--color-water), #4682B4);
+}
+
+.element-fill[data-element="fire"] {
+    background: linear-gradient(90deg, var(--color-fire), #FF4500);
+}
+
+.element-fill[data-element="earth"] {
+    background: linear-gradient(90deg, var(--color-earth), #CD853F);
+}
+
+.element-value {
+    width: 50px;
+    text-align: right;
+    font-weight: 500;
+}
+
+.wuxing-summary {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(139, 0, 255, 0.05);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-primary);
+}
+
+/* 性格特征 */
+.personality-traits h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.traits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.trait-tag {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-white);
+    border-radius: var(--radius-full);
+    text-align: center;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    transition: all var(--transition-fast);
+}
+
+.trait-tag:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .bazi-display {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .traits-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+}
